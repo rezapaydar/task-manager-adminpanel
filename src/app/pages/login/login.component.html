@@ -1,0 +1,81 @@
+<button-theme-toggler></button-theme-toggler>
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
+
+
+  
+    <div class="font-dana font-thin  mt-10 sm:mx-auto sm:w-full sm:max-w-sm  w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <!-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> -->
+        <h2 class="mb-20 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-500">ورود به حساب</h2>
+      </div>
+      <form class="space-y-6" action="#" method="POST">
+        <div *ngIf="countDown.show" >
+          <label for="tel" class="block text-sm font-dana font-medium leading-6 text-gray-900 dark:text-gray-500">شماره تلفن</label>
+          <div class="mt-2">
+            <input onlyNumber autofocus id="tel" #phone="ngModel" minlength="11" maxlength="11"  name="telephone" [(ngModel)]="countDown.phoneNumber" type="tel" autocomplete="tel" required class="block w-full rounded-md border-0 py-1.5 font-dana font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 invalid:ring-red-600 sm:text-sm sm:leading-6 ">
+            <!-- <input  autofocus id="tel" #phone="ngModel" minlength="11" maxlength="11"  name="telephone" [(ngModel)]="countDown.phoneNumber" type="tel" autocomplete="tel" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 "> -->
+  
+          </div>
+          <div class="font-medium text-red-600 text-sm pt-2" *ngIf="phone.dirty" class="alert">
+          <div class="font-medium text-red-600 text-sm pt-2" *ngIf="phone.errors?.['required']"> شماره تلفن اجباری است</div>
+          <div class="font-medium text-red-600 text-sm pt-2" *ngIf="phone.errors?.['minlength']">
+           کم تر از 11 کارکتر نباید وارد شود
+          </div>
+        </div>
+        </div>
+  
+        <div dir="ltr" *ngIf="!countDown.show" class="flex justify-around w-full mb-2 space-x-2 rtl:space-x-reverse center" data-hs-pin-input='{
+          "availableCharsRE": "^[0-9]+$"
+        }'>
+  
+        <div>
+          <label for="code-1" class="sr-only">First code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[0]" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-next="code-2" id="code-1" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+      <div>
+          <label for="code-2" class="sr-only">Second code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[1]" [ngModelOptions]="{standalone: true}" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-prev="code-1" data-focus-input-next="code-3" id="code-2" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+      <div>
+          <label for="code-3" class="sr-only">Third code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[2]" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-prev="code-2" data-focus-input-next="code-4" id="code-3" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+      <div>
+          <label for="code-4" class="sr-only">Fourth code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[3]" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-prev="code-3" data-focus-input-next="code-5" id="code-4" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+      <div>
+          <label for="code-5" class="sr-only">Fifth code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[4]" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-prev="code-4" data-focus-input-next="code-6" id="code-5" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+      <div>
+          <label for="code-6" class="sr-only">Sixth code</label>
+          <input onlyNumber [(ngModel)]="countDown.codeArray[5]" [ngModelOptions]="{standalone: true}" type="text" maxlength="1" data-focus-input-init data-focus-input-prev="code-5" id="code-6" class="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
+      </div>
+  
+      </div>
+      <p *ngIf="!countDown.show" id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-semibold">لطفا کد 6 رقمی پیامک شده به خطتان را وارد کنید</p>
+  
+      
+        <div>
+          <button *ngIf="countDown.show" [disabled]="countDown.offOn"  type="submit" class="disabled:bg-indigo-400 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" (click)="startTimer()" [innerHTML]="countDown.submitButtonText | safehtml">
+            </button>
+          <button *ngIf="!countDown.show" [disabled]="countDown.offOn"  type="submit" class="disabled:bg-indigo-400 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" (click)="submitCode()" [innerHTML]="countDown.submitButtonText | safehtml">
+          </button>
+        </div>
+  
+      </form>
+  
+      <p class="mt-10 text-center font-semibold text-sm text-gray-500"
+      id="hint-form"
+      #hint  [innerHTML]="countDown.subTextIfYouDontSubmit | safehtml">
+        
+      </p>
+  
+      <!-- <button type="button" (click)="pauseTimer()">stop timer</button> -->
+    </div>
+
+  
+
+</div>

@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import '~swiper/css';
+// @import 'swiper/css/navigation';
+// @import 'swiper/css/pagination';
+
+$purple: #615EFC;
+$purpleslow:#7E8EF1;
+$wormy:#D1D8C5;
+$graywormy:#EEEEEE;
+
+
+
+html::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+
+html::-webkit-scrollbar-track {
+background: orange;        /* color of the tracking area */
+}
+
+html::-webkit-scrollbar-thumb {
+background-color: blue;    /* color of the scroll thumb */
+border-radius: 20px;       /* roundness of the scroll thumb */
+border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
+
+  
+  
+
+.dark {
+
+    @apply bg-black text-white;
+  
+}
+
+.body-modal-open {
+
+    overflow: hidden;
+  
+    background-color: rgba(0, 0, 0, 0.5) !important; /* darken the background */
+  
+}
+
+@layer base{
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danablack.ttf);
+        font-weight: 900;
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danabold.ttf);
+        font-weight: 700;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danademibold.ttf);
+        font-weight: 600;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danaextrabold.ttf);
+        font-weight: 800;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danaextralight.ttf);
+        font-weight: 200;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danalight.ttf);
+        font-weight: 300;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danamedium.ttf);
+        font-weight: 500;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danaregular.ttf);
+        font-weight: 400;
+
+    }
+    @font-face {
+        font-family: 'dana';
+        src: url(../public/font/danathin.ttf);
+        font-weight: 100;
+
+    }
+}

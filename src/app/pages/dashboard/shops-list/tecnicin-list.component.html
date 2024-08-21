@@ -1,0 +1,181 @@
+
+<main class="p-4 md:mr-64 h-auto pt-20" dir="rtl" >
+    <div class="grid grid-cols-1 gap-4 mb-2">
+
+        <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5" >
+            <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
+                <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                    <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+                        <div class="flex items-center flex-1 space-x-4">
+                            <button  type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg bg-white-800 border border-gray-600 hover:border-gray-800 hover:text-gray-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.5 18V21H19.5V18H17.5V16H23.5V18H21.5ZM5.5 18V21H3.5V18H1.5V16H7.5V18H5.5ZM11.5 6V3H13.5V6H15.5V8H9.5V6H11.5ZM11.5 10H13.5V21H11.5V10ZM3.5 14V3H5.5V14H3.5ZM19.5 14V3H21.5V14H19.5Z" fill="#2F4858"/>
+                                </svg>
+                                    
+                                فیلتر
+                            </button>
+                        </div>
+                        <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row-reverse md:items-center lg:justify-end md:space-y-0 md:space-x-3">
+
+                            <button  (click)="openModalTemplate(view)" type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-blue-600 rounded-lg bg-white-800 border border-blue-600 hover:border-blue-800 hover:text-blue-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 14.252V16.3414C13.8744 16.1203 13.2013 16 12.5 16C9.18629 16 6.5 18.6863 6.5 22H4.5C4.5 17.5817 8.08172 14 12.5 14C13.1906 14 13.8608 14.0875 14.5 14.252ZM12.5 13C9.185 13 6.5 10.315 6.5 7C6.5 3.685 9.185 1 12.5 1C15.815 1 18.5 3.685 18.5 7C18.5 10.315 15.815 13 12.5 13ZM12.5 11C14.71 11 16.5 9.21 16.5 7C16.5 4.79 14.71 3 12.5 3C10.29 3 8.5 4.79 8.5 7C8.5 9.21 10.29 11 12.5 11ZM18.5 17V14H20.5V17H23.5V19H20.5V22H18.5V19H15.5V17H18.5Z" fill="#0059FC"/>
+                                </svg>
+                                افزودن تکنسین
+                            </button>
+
+                            <!--********************************** modal start **************************************-->
+
+                            
+                                <ng-template #view>
+                                
+                                        <div class="flex flex-col space-y-4 p-4">
+                                            <p>برای افزودن تکنسین لطفا فرم زیر را پر کنید</p>
+                                            <div class="relative my-6">
+                                                <input type="text" id="small_outlined" class="block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                                <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">نام</label>
+                                            </div>
+                                            <div class="relative">
+                                                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                    <option value="manager">منیجر</option>
+                                                    <option value="technicin">تکنسین</option>
+                                                </select>                                            
+                                                <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 translate-x-6 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-4 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">انتخاب نقش</label>
+                                            </div>
+                                            <button (click)="createTechnicin()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">ثبت</button>
+                                        </div>
+                                    
+                                    
+                                </ng-template>
+
+                           
+                            <!--********************************** modal end ******************************************-->
+
+
+                            <!-- <button (click)="exportToExcell()" type="button" class="flex items-center justify-center flex-shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                خروجی اکسل
+                                <svg class="w-6 h-6 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-2m-8 1V4m0 12-4-4m4 4 4-4"/>
+                                </svg>                                  
+                            </button> -->
+                            
+                        </div>
+                    </div>
+
+                    <!-- table start -->
+                    <div class="overflow-x-auto">
+                        <!-- <app-smart-table
+                        [loading]="loadingTable"
+                        [columns]="columns"
+                        [data]="data"
+                        ></app-smart-table> -->
+                        <table id="shoplist" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr class="text-right">
+
+                                    <th scope="col" class="px-4 py-3" *ngFor="let column of columns">{{column}}</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700" *ngFor="let item of data">
+                                    <td class="w-4 px-4 py-3">
+                                        <div class="flex items-center">
+                                            {{item.id}}
+                                        </div>
+                                    </td>
+                                    <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        {{item.firstName}} {{item.lastName}}
+                                    </th>
+                                    <td class="px-4 py-2">
+                                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">{{item.role}}</span>
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div class="flex items-center">
+                                            <!-- <div class="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div> -->
+        
+                                            {{item.phoneNumber}}
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{timeService.convertMiladiToShamsiWithTime(item.created)}}</td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{timeService.convertMiladiToShamsiWithTime(item.update)}}</td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div class="flex items-center">
+
+                                            <span class="ml-1 text-gray-500 dark:text-gray-400">5.0</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div *ngIf="item.status" class="flex items-center text-blue-600">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="8.75" cy="8.13635" r="7" stroke="#0059FC" stroke-width="2"/>
+                                                <circle cx="8.75" cy="8.13635" r="4" fill="#0059FC"/>
+                                            </svg>                                                
+                                            {{item.status|statusreturn}}
+                                        </div>
+                                        <div *ngIf="!item.status"  class="flex items-center text-red-600">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="8.25" cy="8.22729" r="7" stroke="#DF5421" stroke-width="2"/>
+                                                <circle cx="8.25" cy="8.22729" r="4" fill="#DF5421"/>
+                                            </svg> 
+                                            {{item.status|statusreturn}}
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2"><button class="border px-3 py-1 shadow">جزئیات</button>
+                                    <!-- ********************************* modal edit start ************************************************** -->
+                                    <!-- <app-modal #modaledit [modalTitle]="modalTitle">
+                               
+
+                                        
+                                            <!-- <swiper [loop]="true" [autoHeight]="true" [allowTouchMove]="false"
+                                            [autoplay]="{ delay: 1000, disableOnInteraction: false }" [pagination]="true" [navigation]="true">
+                                                <div data-swiper-autoplay="6000" swiperSlide>
+                                                    <img src="assets/img/no-image.jpg" alt="">
+                                                </div>
+                                    
+                                                <div data-swiper-autoplay="10000" class="swiper-slide" swiperSlide>
+                                                    <img src="assets/img/no-image.jpg" alt="">
+                        
+                                                </div>
+                                    
+                                                <div data-swiper-autoplay="60000" swiperSlide>
+                                                    <img src="assets/img/no-image.jpg" alt="">
+                        
+                                                </div>
+                                            </swiper> -->
+                                        
+                                    
+                                    
+                                    <!-- ********************************* modal edit end ************************************************** -->
+                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <button>
+                                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.75 6.13635H22.75V8.13635H20.75V21.1364C20.75 21.6887 20.3023 22.1364 19.75 22.1364H5.75C5.19772 22.1364 4.75 21.6887 4.75 21.1364V8.13635H2.75V6.13635H7.75V3.13635C7.75 2.58407 8.19772 2.13635 8.75 2.13635H16.75C17.3023 2.13635 17.75 2.58407 17.75 3.13635V6.13635ZM18.75 8.13635H6.75V20.1364H18.75V8.13635ZM9.75 11.1364H11.75V17.1364H9.75V11.1364ZM13.75 11.1364H15.75V17.1364H13.75V11.1364ZM9.75 4.13635V6.13635H15.75V4.13635H9.75Z" fill="#DF5421"/>
+                                            </svg>
+                                                
+                                        </button>
+                                    </td>
+                                </tr>
+                       
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- table end -->
+
+                    <!-- start pagination -->
+                    <app-pagination 
+                    (page)="getNextPageList($event)"
+                    [index]="page"
+                    [totalCount]="totalPages"
+                    [maxPages]="totalPages"
+                    [rulerLength]="rulerLengthPage"
+                    ></app-pagination>
+                    <!-- end pagination -->
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>

@@ -1,0 +1,319 @@
+<aside
+  class="fixed flex justify-between flex-col hover:resize-x z-50 top-0 right-0 z-40 w-48 h-full transition-transform translate-x-full bg-white border-l border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+  aria-label="Sidenav"
+  id="drawer-navigation"
+>
+
+  <div dir="rtl" class="overflow-y-auto pt-5 px-3     dark:bg-gray-800">
+
+      <a href="#" class="flex items-center justify-center mr-4 pb-5">
+        <!-- <img
+          src="https://flowbite.s3.amazonaws.com/logo.svg"
+          class="mr-3 h-8"
+          alt="Flowbite Logo"
+        /> -->
+        <span class="self-center pr-2 text-2xl font-semibold whitespace-nowrap dark:text-white">logo</span>
+      </a>
+      <form action="#" method="GET" class="md:hidden mb-2">
+        <label for="sidebar-search" class="sr-only">جستجو</label>
+        <div class="relative">
+          <div
+            class="flex absolute inset-y-0 left-0 items-center pr-3 pointer-events-none"
+          >
+            <svg
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            name="search"
+            id="sidebar-search"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pr-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:praceholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            praceholder="Search"
+          />
+        </div>
+      </form>
+      <ul class="space-y-2">
+
+              <!-- dashboard li sub menu -->
+        <li>
+                        
+          <a routerLink="overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linka="routerLinkActive"  class=" flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              
+            <svg *ngIf="!linka.isActive" width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 21C13.4477 21 13 20.5523 13 20V12C13 11.4477 13.4477 11 14 11H20C20.5523 11 21 11.4477 21 12V20C21 20.5523 20.5523 21 20 21H14ZM4 13C3.44772 13 3 12.5523 3 12V4C3 3.44772 3.44772 3 4 3H10C10.5523 3 11 3.44772 11 4V12C11 12.5523 10.5523 13 10 13H4ZM9 11V5H5V11H9ZM4 21C3.44772 21 3 20.5523 3 20V16C3 15.4477 3.44772 15 4 15H10C10.5523 15 11 15.4477 11 16V20C11 20.5523 10.5523 21 10 21H4ZM5 19H9V17H5V19ZM15 19H19V13H15V19ZM13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 20.5523 9 20 9H14C13.4477 9 13 8.55228 13 8V4ZM15 5V7H19V5H15Z" fill="#5D5D5D"/>
+            </svg>
+              
+            <svg *ngIf="linka.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C12.5523 3 13 3.44771 13 4V10C13 10.5523 12.5523 11 12 11H4C3.44772 11 3 10.5523 3 10V4C3 3.44772 3.44772 3 4 3H12ZM20 3C20.5523 3 21 3.44771 21 4V10C21 10.5523 20.5523 11 20 11H16C15.4477 11 15 10.5523 15 10V4C15 3.44771 15.4477 3 16 3H20ZM20 13C20.5523 13 21 13.4477 21 14V20C21 20.5523 20.5523 21 20 21H12C11.4477 21 11 20.5523 11 20V14C11 13.4477 11.4477 13 12 13H20ZM3 14C3 13.4477 3.44772 13 4 13H8C8.55229 13 9 13.4477 9 14V20C9 20.5523 8.55229 21 8 21H4C3.44772 21 3 20.5523 3 20V14Z" fill="black"/>
+            </svg>
+              
+
+            <span class="ml-3 text-right pr-3 dark:text-gray-100 text-gray-300" [ngClass]="{'text-gray-950':'if(linka.isActive)'}">داشبورد</span>
+          </a>
+
+        </li>
+        
+              <!-- tecnisin  li sub menu -->
+        <li>
+          
+          <button
+            routerLink="tecnicin/list"
+            routerLinkActive="active"
+            #linkq="routerLinkActive"
+            type="button"
+            class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            aria-controls="dropdown-pages"
+            data-collapse-toggle="dropdown-pages"
+          >
+
+          <svg *ngIf="!linkq.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.7909 21 13 19.2091 13 17H11C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C8.48052 13 9.77317 13.8043 10.4648 14.9999H13.5352C14.2268 13.8043 15.5195 13 17 13ZM7 15C5.89543 15 5 15.8954 5 17C5 18.1046 5.89543 19 7 19C8.10457 19 9 18.1046 9 17C9 15.8954 8.10457 15 7 15ZM17 15C15.8954 15 15 15.8954 15 17C15 18.1046 15.8954 19 17 19C18.1046 19 19 18.1046 19 17C19 15.8954 18.1046 15 17 15ZM16 3C18.2091 3 20 4.79086 20 7V10H22V12H2V10H4V7C4 4.79086 5.79086 3 8 3H16ZM16 5H8C6.94564 5 6 5.95 6 7V10H18V7C18 5.94564 17.05 5 16 5Z" fill="#2F4858"/>
+          </svg>
+            
+          <svg *ngIf="linkq.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 13C19.2091 13 21 14.7909 21 17C21 19.2091 19.2091 21 17 21C14.8578 21 13 19.21 13 17H11C11 19.2091 9.20914 21 7 21C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 13 7 13C8.48052 13 9.77317 13.8043 10.4648 14.9999H13.5352C14.2268 13.8043 15.5195 13 17 13ZM2 12V10H4V7C4 4.79086 5.79086 3 8 3H16C18.2091 3 20 4.79086 20 7V10H22V12H2Z" fill="#2F4858"/>
+          </svg>
+            
+
+            <span class="flex-1 ml-3 pr-3 text-right text-gray-500 dark:text-gray-100 whitespace-nowrap" [ngClass]="{'text-gray-950':'if(linkq.isActive)'}">تکنسین ها</span>
+
+          </button>
+          
+          <ul id="dropdown-pages" class="hidden font-dana  py-2 space-y-2">
+
+            <li>
+              <a
+                routerLink="shop/list"
+                href="#"
+                class="flex items-center hover:bg-gray-100 p-2 pr-11 w-full text-base font-light text-gray-900 rounded-lg transition duration-75 group  dark:text-white dark:hover:bg-gray-700"
+                >لیست فروشگاه ها</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="shop/new"
+                
+                href="#"
+                class="flex items-center hover:bg-gray-100 p-2 pr-11 w-full text-base font-light text-gray-900 rounded-lg transition duration-75 group  dark:text-white dark:hover:bg-gray-700"
+                >افزودن فروشگاه</a
+              >
+            </li>
+
+          </ul>
+        </li>
+
+              <!-- tasks li sub menu -->
+        <li>
+
+
+          <button
+            routerLink="tasks/list"
+            routerLinkActive="active"
+            #links="routerLinkActive"
+            type="button"
+            class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            aria-controls="dropdown-sales"
+            data-collapse-toggle="dropdown-sales"
+          >
+
+          <svg *ngIf="!links.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z" fill="#5D5D5D"/>
+          </svg>
+            
+          <svg *ngIf="links.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.00008 6V9H5.00008V6H8.00008ZM3.00008 4V11H10.0001V4H3.00008ZM13.0001 4H21.0001V6H13.0001V4ZM13.0001 11H21.0001V13H13.0001V11ZM13.0001 18H21.0001V20H13.0001V18ZM10.7072 16.2071L9.29297 14.7929L6.00008 18.0858L4.20718 16.2929L2.79297 17.7071L6.00008 20.9142L10.7072 16.2071Z" fill="#2F4858"/>
+          </svg>
+            
+          
+
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">تسک ها</span>
+
+          </button>
+          <ul id="dropdown-sales" class="hidden py-2 space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >لیست کاربران</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >افزودن</a
+              >
+            </li>
+
+          </ul>
+        </li>
+
+              <!-- teams li sub menu -->
+        <li>
+          <a  routerLink="teams/list" routerLink="tasks/list" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linkr="routerLinkActive" class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+          <svg  *ngIf="!linkr.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 11C14.7614 11 17 13.2386 17 16V22H15V16C15 14.4023 13.7511 13.0963 12.1763 13.0051L12 13C10.4023 13 9.09634 14.2489 9.00509 15.8237L9 16V22H7V16C7 13.2386 9.23858 11 12 11ZM5.5 14C5.77885 14 6.05009 14.0326 6.3101 14.0942C6.14202 14.594 6.03873 15.122 6.00896 15.6693L6 16L6.0007 16.0856C5.88757 16.0456 5.76821 16.0187 5.64446 16.0069L5.5 16C4.7203 16 4.07955 16.5949 4.00687 17.3555L4 17.5V22H2V17.5C2 15.567 3.567 14 5.5 14ZM18.5 14C20.433 14 22 15.567 22 17.5V22H20V17.5C20 16.7203 19.4051 16.0796 18.6445 16.0069L18.5 16C18.3248 16 18.1566 16.03 18.0003 16.0852L18 16C18 15.3343 17.8916 14.694 17.6915 14.0956C17.9499 14.0326 18.2211 14 18.5 14ZM5.5 8C6.88071 8 8 9.11929 8 10.5C8 11.8807 6.88071 13 5.5 13C4.11929 13 3 11.8807 3 10.5C3 9.11929 4.11929 8 5.5 8ZM18.5 8C19.8807 8 21 9.11929 21 10.5C21 11.8807 19.8807 13 18.5 13C17.1193 13 16 11.8807 16 10.5C16 9.11929 17.1193 8 18.5 8ZM5.5 10C5.22386 10 5 10.2239 5 10.5C5 10.7761 5.22386 11 5.5 11C5.77614 11 6 10.7761 6 10.5C6 10.2239 5.77614 10 5.5 10ZM18.5 10C18.2239 10 18 10.2239 18 10.5C18 10.7761 18.2239 11 18.5 11C18.7761 11 19 10.7761 19 10.5C19 10.2239 18.7761 10 18.5 10ZM12 2C14.2091 2 16 3.79086 16 6C16 8.20914 14.2091 10 12 10C9.79086 10 8 8.20914 8 6C8 3.79086 9.79086 2 12 2ZM12 4C10.8954 4 10 4.89543 10 6C10 7.10457 10.8954 8 12 8C13.1046 8 14 7.10457 14 6C14 4.89543 13.1046 4 12 4Z" fill="#5D5D5D"/>
+          </svg>
+
+          <svg *ngIf="linkr.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 10C14.2091 10 16 8.20914 16 6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6C8 8.20914 9.79086 10 12 10ZM5.5 13C6.88071 13 8 11.8807 8 10.5C8 9.11929 6.88071 8 5.5 8C4.11929 8 3 9.11929 3 10.5C3 11.8807 4.11929 13 5.5 13ZM21 10.5C21 11.8807 19.8807 13 18.5 13C17.1193 13 16 11.8807 16 10.5C16 9.11929 17.1193 8 18.5 8C19.8807 8 21 9.11929 21 10.5ZM12 11C14.7614 11 17 13.2386 17 16V22H7V16C7 13.2386 9.23858 11 12 11ZM5 15.9999C5 15.307 5.10067 14.6376 5.28818 14.0056L5.11864 14.0204C3.36503 14.2104 2 15.6958 2 17.4999V21.9999H5V15.9999ZM22 21.9999V17.4999C22 15.6378 20.5459 14.1153 18.7118 14.0056C18.8993 14.6376 19 15.307 19 15.9999V21.9999H22Z" fill="#2F4858"/>
+          </svg>
+            
+            
+          
+            <span class="flex-1 ml-3 pr-3 whitespace-nowrap">تیم ها</span>
+
+            <!-- badge for team -->
+            <!-- <span
+              class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800"
+            >
+              4
+            </span> -->
+          </a>
+        </li>
+
+              <!-- store li sub menu -->
+
+        <li>
+          <button
+            type="button"
+            routerLink="store/list"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linkt="routerLinkActive"
+            class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            aria-controls="dropdown-authentication"
+            data-collapse-toggle="dropdown-authentication"
+          >
+
+          <svg *ngIf="!linkt.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 13.2422V20H22V22H2V20H3V13.2422C1.79401 12.435 1 11.0602 1 9.5C1 8.67286 1.22443 7.87621 1.63322 7.19746L4.3453 2.5C4.52393 2.1906 4.85406 2 5.21132 2H18.7887C19.1459 2 19.4761 2.1906 19.6547 2.5L22.3575 7.18172C22.7756 7.87621 23 8.67286 23 9.5C23 11.0602 22.206 12.435 21 13.2422ZM19 13.9725C18.8358 13.9907 18.669 14 18.5 14C17.2409 14 16.0789 13.478 15.25 12.6132C14.4211 13.478 13.2591 14 12 14C10.7409 14 9.5789 13.478 8.75 12.6132C7.9211 13.478 6.75911 14 5.5 14C5.331 14 5.16417 13.9907 5 13.9725V20H19V13.9725ZM5.78865 4L3.35598 8.21321C3.12409 8.59843 3 9.0389 3 9.5C3 10.8807 4.11929 12 5.5 12C6.53096 12 7.44467 11.3703 7.82179 10.4295C8.1574 9.59223 9.3426 9.59223 9.67821 10.4295C10.0553 11.3703 10.969 12 12 12C13.031 12 13.9447 11.3703 14.3218 10.4295C14.6574 9.59223 15.8426 9.59223 16.1782 10.4295C16.5553 11.3703 17.469 12 18.5 12C19.8807 12 21 10.8807 21 9.5C21 9.0389 20.8759 8.59843 20.6347 8.19746L18.2113 4H5.78865Z" fill="#5D5D5D"/>
+          </svg>
+
+          <svg *ngIf="linkt.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 20V22H2V20H3V13.2422C1.79401 12.435 1 11.0602 1 9.5C1 8.67286 1.22443 7.87621 1.63322 7.19746L4.3453 2.5C4.52393 2.1906 4.85406 2 5.21132 2H18.7887C19.1459 2 19.4761 2.1906 19.6547 2.5L22.3575 7.18172C22.7756 7.87621 23 8.67286 23 9.5C23 11.0602 22.206 12.435 21 13.2422V20H22ZM5.78865 4L3.35598 8.21321C3.12409 8.59843 3 9.0389 3 9.5C3 10.8807 4.11929 12 5.5 12C6.53096 12 7.44467 11.3703 7.82179 10.4295C8.1574 9.59223 9.3426 9.59223 9.67821 10.4295C10.0553 11.3703 10.969 12 12 12C13.031 12 13.9447 11.3703 14.3218 10.4295C14.6574 9.59223 15.8426 9.59223 16.1782 10.4295C16.5553 11.3703 17.469 12 18.5 12C19.8807 12 21 10.8807 21 9.5C21 9.0389 20.8759 8.59843 20.6347 8.19746L18.2113 4H5.78865Z" fill="#2F4858"/>
+          </svg>
+            
+            
+
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">انبار</span>
+
+          </button>
+          <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >افزودن محصول</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >افزودن کاتالوگ محصول</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >لیست کامل محصولات</a
+              >
+            </li>
+          </ul>
+        </li>
+
+              <!-- logs li sub menu -->
+        <li>
+          <button
+            type="button"
+            routerLink="store/list"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linkm="routerLinkActive"
+            class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            aria-controls="dropdown-authentication"
+            data-collapse-toggle="dropdown-authentication"
+          >
+
+
+
+            <svg svg *ngIf="!linkm.isActive" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C8.298 20 6.69525 19.5748 5.29229 18.8248L0 20L1.17629 14.7097C0.42562 13.3063 0 11.7028 0 10C0 4.47715 4.47715 0 10 0ZM10 2C5.58172 2 2 5.58172 2 10C2 11.3347 2.32563 12.6181 2.93987 13.7664L3.28952 14.4201L2.63445 17.3663L5.58189 16.7118L6.23518 17.061C7.38315 17.6747 8.6659 18 10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2ZM11 5V10H15V12H9V5H11Z" fill="#5D5D5D"/>
+            </svg>
+
+            <svg *ngIf="linkm.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.298 22 8.69525 21.5748 7.29229 20.8248L2 22L3.17629 16.7097C2.42562 15.3063 2 13.7028 2 12C2 6.47715 6.47715 2 12 2ZM13 7H11V14H17V12H13V7Z" fill="#2F4858"/>
+            </svg>
+              
+            
+
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">لاگ ها</span>
+
+          </button>
+          <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >افزودن محصول</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >افزودن کاتالوگ محصول</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                >لیست کامل محصولات</a
+              >
+            </li>
+          </ul>
+        </li>
+
+
+      </ul>
+
+  </div>
+
+  <div dir="rtl" class=" px-3">
+
+    <button
+    type="button"
+    (click)="exitPanel()"
+    class="flex items-center p-2 w-full text-base font-medium text-red-500 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+    aria-controls="dropdown-authentication"
+    data-collapse-toggle="dropdown-authentication"
+  >
+
+
+
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 11H13V13H5V16L0 12L5 8V11ZM3.99927 18H6.70835C8.11862 19.2447 9.97111 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C9.97111 4 8.11862 4.75527 6.70835 6H3.99927C5.82368 3.57111 8.72836 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C8.72836 22 5.82368 20.4289 3.99927 18Z" fill="#DF5421"/>
+  </svg>
+    
+
+    <svg *ngIf="linkm.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.298 22 8.69525 21.5748 7.29229 20.8248L2 22L3.17629 16.7097C2.42562 15.3063 2 13.7028 2 12C2 6.47715 6.47715 2 12 2ZM13 7H11V14H17V12H13V7Z" fill="#2F4858"/>
+    </svg>
+      
+    
+
+    <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">خروج</span>
+
+  </button>
+  </div>
+</aside>

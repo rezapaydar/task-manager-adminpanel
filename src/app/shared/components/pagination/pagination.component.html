@@ -1,0 +1,15 @@
+<ol *ngIf="totalCount!=0" class="paginator-container " style="direction: ltr">
+    <li style="min-width: fit-content" (click)="navigateToPage(1)">صفحه اول</li>
+    <li style="min-width: fit-content" (click)="navigateToPage(index - 1)">صفحه قبل</li>
+    <li
+            *ngFor="let page of pagination.pages; trackBy: trackByFn"
+            class="paginator-number p-1"
+            [class.active]="page === pagination.index"
+            (click)="navigateToPage(page)"
+    >
+        {{ page }}
+    </li>
+    <li style="min-width: fit-content" (click)="navigateToPage(index + 1)">صفحه بعد</li>
+    <li style="min-width: fit-content" (click)="navigateToPage(maxPages)">آخرین صفحه</li>
+</ol>
+<p class="m-3" *ngIf="totalCount==0 " style="color: darkred">چیزی پیدا نشد!</p>
