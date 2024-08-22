@@ -12,10 +12,12 @@ import { tecnicinListComponent } from './dashboard/shops-list/tecnicin-list.comp
 import { ExportExcellService } from '../shared/services/export-excell.service';
 import { AddNewShopComponent } from './dashboard/shops-list/tecnicin-add/add-new-shop.component';
 import { AddtoastService } from '../shared/services/addtoast.service';
+import { register as registerSwiperElements } from 'swiper/element/bundle';
 
+registerSwiperElements();
 
 @NgModule({
-  declarations: [DashboardComponent, LoginComponent,ChartsOverviewComponent,tecnicinListComponent,AddNewShopComponent],
+  declarations: [DashboardComponent, LoginComponent,ChartsOverviewComponent,AddNewShopComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

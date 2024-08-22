@@ -3,9 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import '~swiper/css';
-// @import 'swiper/css/navigation';
-// @import 'swiper/css/pagination';
+@import 'leaflet/dist/leaflet.css';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 $purple: #615EFC;
 $purpleslow:#7E8EF1;
@@ -19,13 +20,13 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-background: orange;        /* color of the tracking area */
+background: rgb(247, 247, 247);        /* color of the tracking area */
 }
 
 html::-webkit-scrollbar-thumb {
-background-color: blue;    /* color of the scroll thumb */
+background-color: rgb(133, 133, 133);    /* color of the scroll thumb */
 border-radius: 20px;       /* roundness of the scroll thumb */
-border: 3px solid orange;  /* creates padding around scroll thumb */
+// border: 3px solid orange;  /* creates padding around scroll thumb */
 }
 
 
@@ -101,3 +102,112 @@ border: 3px solid orange;  /* creates padding around scroll thumb */
 
     }
 }
+
+.swiper-container {
+    width: 100%;
+    height: 250px;
+    padding-top: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    border: 1px solid #7c7d7e;
+  }
+  
+  .swiper-slide:hover {
+    z-index: 99999;
+    transition: transform .4s;
+    -ms-transform: scale(1.15);
+    -webkit-transform: scale(1.15);  
+    transform: scale(1.15);
+    border: 3px solid #7c7d7e;
+  }
+  
+  :root {
+    --swiper-theme-color: #757575;
+    --swiper-navigation-size: 15px;
+  }
+  
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: var(--swiper-navigation-size);
+  }
+  
+  .swiper-button-prev1,
+  .swiper-button-next1 {
+    position: absolute;
+    top: 40%;
+    width: 44px;
+    height: 44px;
+    margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 7px 15px rgba(0,0,0,.2);
+  }
+  .swiper-button-prev1.swiper-button-disabled,
+  .swiper-button-next1.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+  }
+  .swiper-button-prev1:hover,
+  .swiper-button-next1:hover {
+    color: #000000;
+    border: 2px solid #7c7d7e;
+  }
+  .swiper-button-prev1:after,
+  .swiper-button-next1:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+  }
+  .swiper-button-prev1,
+  .swiper-container-rtl .swiper-button-next1 {
+    left: 10px;
+    right: auto;
+  }
+  .swiper-button-prev1:after,
+  .swiper-container-rtl .swiper-button-next1:after {
+    content: '';
+  }
+  .swiper-button-next1,
+  .swiper-container-rtl .swiper-button-prev1 {
+    right: 10px;
+    left: auto;
+  }
+  .swiper-button-next1:after,
+  .swiper-container-rtl .swiper-button-prev1:after {
+    content: '';
+  }
+  
+  .swiper-container svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+      fill: #757575;
+  }

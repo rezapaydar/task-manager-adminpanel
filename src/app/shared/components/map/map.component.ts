@@ -2,8 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import * as L from 'leaflet';
 import { map } from 'leaflet';
-
-
+import 'leaflet.fullscreen';
 
 
 
@@ -38,17 +37,18 @@ export class MapComponent {
   }
 
   private getCurrentPosition(): any {
-    this.map = map('map').setView([34.79922, 48.51456], 13);
+
+    this.map = map('map',{
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft'
+      }
+    }).setView([34.79922, 48.51456], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 16,
-      id: 'mapbox/streets-v11',
-      tileSize: 1367,
-      zoomOffset: -1,
-      latLng:[34.79922, 48.51456],
-      accessToken: this.token,
     }).addTo(this.map);
+
 
       this.loadMap()
   }
@@ -67,11 +67,12 @@ export class MapComponent {
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
 
-  this.markerLocations.forEach(t => {
-    L.marker([t.lat, t.lng], { icon })
-        .addTo(this.map)
-        .bindPopup('Hi!!');
-  })
+    this.markerLocations.forEach(t => {
+      L.marker([34.79922, 48.51456], { icon })
+          .addTo(this.map)
+          .bindPopup('تیم 1');
+    })
+
   }
 
   fullScreen(){
@@ -80,7 +81,7 @@ export class MapComponent {
 
   addMarker(e:any){
     // Add marker to map at click location; add popup window
-    var newMarker = new L.marker(e.latlng).addTo(this.map);
+    var newMarker = new L.marker(e.target.latlng).addTo(this.map);
 }
   
 }

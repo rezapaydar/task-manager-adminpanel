@@ -3,6 +3,7 @@ import {
   ComponentRef,
   EnvironmentInjector,
   Injectable,
+  Input,
   TemplateRef,
   Type,
   ViewContainerRef,
@@ -18,6 +19,7 @@ export class ModalService {
   newModalComponent!: ComponentRef<ModalComponent>;
   options!: Options | undefined;
 
+
   constructor(
     private appRef: ApplicationRef,
     private injector: EnvironmentInjector
@@ -26,7 +28,9 @@ export class ModalService {
   open(
     vcrOrComponent: ViewContainerRef,
     content: TemplateRef<Element>,
-    options?: Options
+    options?: Options,
+  
+
   ): void;
 
   open<C>(vcrOrComponent: Type<C>, options?: Options): void;
@@ -34,11 +38,13 @@ export class ModalService {
   open<C>(
     vcrOrComponent: ViewContainerRef | Type<C>,
     param2?: TemplateRef<Element> | Options,
-    options?: Options
+    options?: Options,
+  
   ) {
     if (vcrOrComponent instanceof ViewContainerRef) {
       this.openWithTemplate(vcrOrComponent, param2 as TemplateRef<Element>);
       this.options = options;
+ 
     } else {
       this.openWithComponent(vcrOrComponent);
       this.options = param2 as Options | undefined;

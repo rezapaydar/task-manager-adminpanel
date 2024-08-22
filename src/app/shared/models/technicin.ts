@@ -4,6 +4,8 @@ export enum Roles {
 
 export interface technicin{
     id: string,
+    task?:string,
+    description?:string,
     update: string|any,
     created: string|any,
     email: string,

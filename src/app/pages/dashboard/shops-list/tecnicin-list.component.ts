@@ -1,41 +1,23 @@
-import { Component, ViewChild,HostListener, OnInit, NgZone, ChangeDetectorRef, TemplateRef, ViewContainerRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, ViewChild,NgZone, ChangeDetectorRef, TemplateRef, ViewContainerRef,CUSTOM_ELEMENTS_SCHEMA, ElementRef, } from '@angular/core';
 
-// import SwiperCore, {
-//   Navigation,
-//   Pagination,
-//   Scrollbar,
-//   A11y,
-//   Virtual,
-//   Zoom,
-//   Autoplay,
-//   Thumbs,
-//   Controller
-// } from "swiper";
-// import { SwiperComponent } from 'swiper/angular';
-import { ModalComponent } from '../../../shared/components/modal/modal.component';
+
 import { ModalService } from '../../../shared/components/modal/modal.service';
 import { technicin } from '../../../shared/models/technicin';
 import { ExportExcellService } from '../../../shared/services/export-excell.service';
 import { TimeService } from '../../../shared/services/time.service';
+import { SharedModule } from '../../../shared/shared.module';
+import { SwiperContainer } from 'swiper/element/bundle';
 
 
-// SwiperCore.use([
-//   Navigation,
-//   Pagination,
-//   Scrollbar,
-//   A11y,
-//   Virtual,
-//   Zoom,
-//   Autoplay,
-//   Thumbs,
-//   Controller
-// ]);
+
 
 @Component({
   selector: 'app-shops-list',
   templateUrl: './tecnicin-list.component.html',
-  styleUrls: ['./tecnicin-list.component.scss']
+  styleUrls: ['./tecnicin-list.component.scss'],
+  imports:[SharedModule],
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class tecnicinListComponent {
   modalTitle='افزودن تکنسین';
@@ -102,15 +84,18 @@ export class tecnicinListComponent {
       lastLogin: new Date
     },
   ]
-  constructor(private modalService: ModalService,private exportExcellService:ExportExcellService,public timeService: TimeService,private cd: ChangeDetectorRef, private ngZone: NgZone){
+  viewData!:technicin;
+  constructor(public modalService: ModalService,private exportExcellService:ExportExcellService,public timeService: TimeService,private cd: ChangeDetectorRef, private ngZone: NgZone){
 
   }
 
   @ViewChild('view', { static: true, read: ViewContainerRef })
   vcr!: ViewContainerRef;
 
+  
 
-  openModalTemplate(view: TemplateRef<Element>) {
+  openModalTemplate(view: TemplateRef<Element>,item?:any) {
+    this.viewData = item ;
     
     this.modalService.open(this.vcr, view, {
       animations: {
@@ -123,11 +108,17 @@ export class tecnicinListComponent {
         },
       },
       size: {
-        width: '40rem',
+        width: '24rem',
       },
     });
   }
 
+  swiperContainerId = 'why-us-swiper';
+  index = 0;
+  slidePerView = 1;
+
+  @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
+  initialized = false;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -135,6 +126,18 @@ export class tecnicinListComponent {
     this.chunkedPageArray = this.data;
     this.data=this.chunkArray(this.chunkedPageArray,10)[this.page-1].items;
 
+
+
+  }
+
+  changeSlide(prevOrNext: number): void {
+    
+    
+    if (prevOrNext === -1) {
+      this.swiperRef.nativeElement.swiper.slidePrev();
+    } else {
+      this.swiperRef.nativeElement.swiper.slideNext();
+    }
   }
 
   exportToExcell(){

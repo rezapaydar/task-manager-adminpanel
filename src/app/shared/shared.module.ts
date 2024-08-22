@@ -17,9 +17,9 @@ import { ModalComponent } from './components/modal/modal.component';
 import { SmartTableComponent } from './components/smart-table/smart-table.component';
 import { TimeService } from './services/time.service';
 import { StatusreturnPipe } from './pipes/statusreturn.pipe';
-// import { SwiperModule } from 'swiper/angular';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ClickedOutsideDirective } from './directives/clickoutside.directive';
+
 
 @NgModule({
   declarations: [
@@ -38,17 +38,15 @@ import { ClickedOutsideDirective } from './directives/clickoutside.directive';
     ClickedOutsideDirective,
   ],
   imports: [
-
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-
+    
   ],
   exports:[
     ClickedOutsideDirective,
     PaginationComponent,
-
     StatusreturnPipe,
     SmartTableComponent,
     ModalComponent,

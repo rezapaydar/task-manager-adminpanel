@@ -5,6 +5,7 @@ import {
   AfterViewInit,
   HostListener,
   TemplateRef,
+  Input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalService } from './modal.service';
@@ -26,9 +27,10 @@ export class ModalComponent implements AfterViewInit {
   overlayAnimationEnd!: Observable<Event>;
   modalLeaveTiming!: number;
   overlayLeaveTiming!: number;
+  @Input() modalTitle:string | any;
 
   constructor(
-    private modalService: ModalService,
+    public modalService: ModalService,
     private element: ElementRef
   ) {}
 
