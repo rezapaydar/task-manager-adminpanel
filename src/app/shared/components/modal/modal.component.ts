@@ -72,6 +72,7 @@ export class ModalComponent implements AfterViewInit {
       this.options?.size?.height || 'auto';
     this.modal.nativeElement.style.maxHeight =
       this.options?.size?.maxHeight || 'auto';
+      this.modal.nativeElement.style.zIndex = '9999999999';
 
     this.modalLeaveAnimation = this.options?.animations?.modal?.leave || '';
     this.overlayLeaveAnimation = this.options?.animations?.overlay?.leave || '';

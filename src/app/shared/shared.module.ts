@@ -11,7 +11,6 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { RouterModule } from '@angular/router';
 // import { SpreadSheetsModule } from "@mescius/spread-sheets-angular";
 import { ExportExcellService } from './services/export-excell.service';
-import { AddtoastService } from './services/addtoast.service';
 import { MapComponent } from './components/map/map.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { SmartTableComponent } from './components/smart-table/smart-table.component';
@@ -19,6 +18,12 @@ import { TimeService } from './services/time.service';
 import { StatusreturnPipe } from './pipes/statusreturn.pipe';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ClickedOutsideDirective } from './directives/clickoutside.directive';
+import { LoginApiService } from '../pages/login/api/login-api.service';
+import { AuthServiceService } from './services/auth-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -38,11 +43,13 @@ import { ClickedOutsideDirective } from './directives/clickoutside.directive';
     ClickedOutsideDirective,
   ],
   imports: [
+    
+    ToastrModule.forRoot(),
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    
+    HttpClientModule,
   ],
   exports:[
     ClickedOutsideDirective,
@@ -51,7 +58,6 @@ import { ClickedOutsideDirective } from './directives/clickoutside.directive';
     SmartTableComponent,
     ModalComponent,
     MapComponent,
-
     // SpreadSheetsModule,
     RouterModule,
     ProfileCardComponent,
@@ -64,11 +70,12 @@ import { ClickedOutsideDirective } from './directives/clickoutside.directive';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    ToastrModule,
   ],providers:[
     ExportExcellService,
-    AddtoastService,
-    TimeService
-  ]
+    TimeService,
+    LoginApiService,
+    AuthServiceService,
+  ],
 })
 export class SharedModule { }

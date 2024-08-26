@@ -17,4 +17,5 @@ export interface Options {
     height?: string;
     maxHeight?: string;
   };
+  zindex?:string;
 }

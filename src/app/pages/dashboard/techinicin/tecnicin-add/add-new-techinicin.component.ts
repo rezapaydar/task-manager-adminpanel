@@ -12,11 +12,11 @@ import { Component } from '@angular/core';
 // });
 
 @Component({
-  selector: 'app-add-new-shop',
-  templateUrl: './add-new-shop.component.html',
-  styleUrls: ['./add-new-shop.component.scss']
+  selector: 'app-add-new-techinicin',
+  templateUrl: './add-new-techinicin.component.html',
+  styleUrls: ['./add-new-techinicin.component.scss']
 })
-export class AddNewShopComponent {
+export class AddNewTechnicinComponent {
   constructor() {}
 
 

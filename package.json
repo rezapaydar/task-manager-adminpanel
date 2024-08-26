@@ -26,6 +26,7 @@
     "leaflet": "^1.8.0",
     "leaflet.fullscreen": "^3.0.2",
     "ng-apexcharts": "^1.7.0",
+    "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.12.3",
     "swiper": "^11.1.3",

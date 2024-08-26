@@ -1,28 +1,62 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild, viewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountDownService } from '../../shared/services/count-down.service';
 import Swal from 'sweetalert2';
+import { SharedModule } from '../../shared/shared.module';
+import { LoginApiService } from './api/login-api.service';
+import { AuthServiceService } from '../../shared/services/auth-service.service';
+import { responseLogin } from '../../shared/models/loginresponse';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+
 })
 export class LoginComponent implements OnInit {
   isAuthenticated:any;
   button:any;
-  constructor(public countDown:CountDownService,private elementRef: ElementRef<HTMLElement>,private renderer: Renderer2,private router: Router){}
-  ngOnInit(): void {
-    this.isAuthenticated = localStorage.getItem('isAuthenticated');
-    if (this.isAuthenticated!='' || this.isAuthenticated!=null || this.isAuthenticated!=undefined || this.isAuthenticated =="yes") {
-     this.router.navigate(['/dashboard'])
-    //  Swal.fire({
-    //   title: 'خطا!',
-    //   text: 'لطفا اول از سیستم خارج شوید',
-    //   icon: 'error',
-    //   confirmButtonText: 'متوجه شدم'
-    // })    
+  loginData={
+    username:'',
+    password:'',
   }
+
+  constructor(private authservice:AuthServiceService,private loginapi:LoginApiService,public countDown:CountDownService,private elementRef: ElementRef<HTMLElement>,private renderer: Renderer2,private router: Router){}
+  ngOnInit(): void {
+    // this.isAuthenticated = localStorage.getItem('isAuthenticated');
+    this.authservice.removeToken()
+    if (this.authservice.getToken()) {
+     this.router.navigate(['/dashboard'])
+    }else{
+     this.router.navigate(['/login'])
+
+    }
+
+  }
+
+  @ViewChild("password") password!: NgForm;
+  @ViewChild("username") username!: NgForm;
+
+  sendForm(){
+    // console.log(this.loginapi.login(this.loginData));
+    if (this.username.valid||this.password.valid) {
+      this.loginapi.login(this.loginData).subscribe(
+        (res:responseLogin)=>{
+          this.authservice.saveToken(res.token);
+          this.authservice.saveUserInfo(res);
+          this.router.navigate(['/dashboard'])
+  
+        },
+        (err:Error)=>{
+          
+          console.error(err);
+          return false;
+        }
+      );
+    } else {
+      
+    }    
 
   }
 

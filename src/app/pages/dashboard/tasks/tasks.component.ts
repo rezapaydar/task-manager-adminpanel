@@ -1,28 +1,22 @@
-import { Component, ViewChild,NgZone, ChangeDetectorRef, TemplateRef, ViewContainerRef,CUSTOM_ELEMENTS_SCHEMA, ElementRef, } from '@angular/core';
-
-
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, NgZone, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { SharedModule } from '../../../shared/shared.module';
+import { SwiperContainer } from 'swiper/element';
 import { ModalService } from '../../../shared/components/modal/modal.service';
 import { technicin } from '../../../shared/models/technicin';
 import { ExportExcellService } from '../../../shared/services/export-excell.service';
 import { TimeService } from '../../../shared/services/time.service';
-import { SharedModule } from '../../../shared/shared.module';
-import { SwiperContainer } from 'swiper/element/bundle';
-
-
-
 
 @Component({
-  selector: 'app-shops-list',
-  templateUrl: './tecnicin-list.component.html',
-  styleUrls: ['./tecnicin-list.component.scss'],
-  imports:[SharedModule],
+  selector: 'app-tasks',
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [SharedModule],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.scss'
 })
-export class tecnicinListComponent {
-  modalTitle='افزودن تکنسین';
+export class TasksComponent {
   loadingTable:boolean=false;
-  columns:Array<any>=['ردیف','نام تکنسین','تکنسین ارشد','تلفن همراه','ساعت ورود به انبار',"ساعت خروج از انبار",'مختصات','وضعیت','','']
+  columns:Array<any>=['ردیف','عنوان','تکنسین ارشد ','ادمین','درصد انجام','مختصات','وضعیت','','']
   data:Array<technicin>=[
     {
       id: '1', username: 'لورم', role: "technicin", firstName: 'ادمین', created: new Date, update: new Date, personnelCode: '565645', lastName: 'مختصات', phoneNumber: '09186565984', status: true,

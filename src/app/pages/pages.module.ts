@@ -7,17 +7,21 @@ import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardAuthGuard } from '../shared/guard/dashboardauth.guard';
 import { LoginAuthGuard } from '../shared/guard/loginauth.guard';
-import { ChartsOverviewComponent } from './dashboard/charts-overview/charts-overview.component';
-import { tecnicinListComponent } from './dashboard/shops-list/tecnicin-list.component';
+import { ChartsOverviewComponent } from './dashboard/dashboard-overview/charts-overview.component';
+import { tecnicinListComponent } from './dashboard/techinicin/tecnicin-list.component';
 import { ExportExcellService } from '../shared/services/export-excell.service';
-import { AddNewShopComponent } from './dashboard/shops-list/tecnicin-add/add-new-shop.component';
-import { AddtoastService } from '../shared/services/addtoast.service';
+import { AddNewTechnicinComponent } from './dashboard/techinicin/tecnicin-add/add-new-techinicin.component';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
+import { AdminsComponent } from './dashboard/admins/admins.component';
+import { AddTaskComponent } from './dashboard/tasks/add-task/add-task.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
+
 
 registerSwiperElements();
 
 @NgModule({
-  declarations: [DashboardComponent, LoginComponent,ChartsOverviewComponent,AddNewShopComponent],
+  declarations: [DashboardComponent, LoginComponent,ChartsOverviewComponent,AddNewTechnicinComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
@@ -26,7 +30,8 @@ registerSwiperElements();
     ExportExcellService,
     DashboardAuthGuard,
     LoginAuthGuard,
-    AddtoastService
+    provideAnimations(), // required animations providers
+    provideToastr()
   ]
 })
 export class PagesModule { }

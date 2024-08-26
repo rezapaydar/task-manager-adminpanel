@@ -9,7 +9,7 @@ $dark-theme: true;
 .active span{
     padding-right: 20px;
     transition: padding-right 0.3s;
-
+    color: black;
 }
 
 @if $dark-theme {

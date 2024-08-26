@@ -1,8 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import * as L from 'leaflet';
 import { map } from 'leaflet';
 import 'leaflet.fullscreen';
+import { MapService } from './map.service';
 
 
 
@@ -13,8 +14,9 @@ import 'leaflet.fullscreen';
 })
 export class MapComponent {
 
-  map: any;
-  token:any=`sk.eyJ1IjoibWFtYXJlemFqIiwiYSI6ImNsenk2aDV5MTB6a3kya3M4OGxhMW9hdWIifQ.l2hEdqdGbn1OXtCVhKxwVg`
+  @Output() isAccept?: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output() map: any;
 
   markerLocations = [
     {
@@ -28,7 +30,7 @@ export class MapComponent {
      }
   ]
 
-  constructor() {
+  constructor(private mapService: MapService) {
   }
 
   public ngAfterViewInit(): void {
@@ -49,19 +51,27 @@ export class MapComponent {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
+      //this.map.on('click', this.isAccept?.bind(this));
+      this.map.on('contextmenu', this.onMapClick.bind(this));
+    
 
       this.loadMap()
+  }
+
+  
+  private onMapClick(e: any): void {
+    
+    this.mapService.addMarker(e.latlng.lat, e.latlng.lng,this.map);
+    
   }
 
   private loadMap(): void {
 
     
     const icon = L.icon({
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/marker-icon.png',
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/marker-shadow.png',
-
-      iconSize: [41, 41], // size of the icon
-      shadowSize: [41, 41], // size of the shadow
+      iconUrl: 'img/loc.png',
+  
+      iconSize: [31, 31], // size of the icon
       iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
@@ -82,6 +92,7 @@ export class MapComponent {
   addMarker(e:any){
     // Add marker to map at click location; add popup window
     var newMarker = new L.marker(e.target.latlng).addTo(this.map);
-}
+  }
+
   
 }

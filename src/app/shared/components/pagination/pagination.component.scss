@@ -27,13 +27,22 @@ ol {
       margin:2px;
       border-radius: 8px;
       font-family: DanaMediumNum, sans-serif;
-      background-color: #d8d8d8;
+      background-color: #ffffff;
+      color: #bbb;
+      border: 1px solid #bbb;
+      -webkit-box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
+      -moz-box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
+      box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
     }
 
     &.active {
       color: #fff;
-      background-color: #07B1BCFF !important;
-
+      // background-color: #07B1BCFF !important;
+      color: #1e1e1e;
+      border: 1px solid #313131;
+      -webkit-box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
+      -moz-box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
+      box-shadow: 0px 2px 66px 4px rgba(238,238,238,1);
     }
   }
 }

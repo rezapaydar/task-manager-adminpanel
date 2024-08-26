@@ -1,15 +1,26 @@
-<ol *ngIf="totalCount!=0" class="paginator-container " style="direction: ltr">
-    <li style="min-width: fit-content" (click)="navigateToPage(1)">صفحه اول</li>
-    <li style="min-width: fit-content" (click)="navigateToPage(index - 1)">صفحه قبل</li>
-    <li
-            *ngFor="let page of pagination.pages; trackBy: trackByFn"
-            class="paginator-number p-1"
-            [class.active]="page === pagination.index"
-            (click)="navigateToPage(page)"
-    >
-        {{ page }}
-    </li>
-    <li style="min-width: fit-content" (click)="navigateToPage(index + 1)">صفحه بعد</li>
-    <li style="min-width: fit-content" (click)="navigateToPage(maxPages)">آخرین صفحه</li>
-</ol>
+<div class="flex justify-center">
+    <ol *ngIf="totalCount!=0" class="paginator-container " style="direction: ltr; width: 400px;">
+        <li style="min-width: fit-content" (click)="navigateToPage(1)">صفحه اول</li>
+        <li style="min-width: fit-content" (click)="navigateToPage(index - 1)">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+          </svg>
+          </li>
+        <li
+                *ngFor="let page of pagination.pages; trackBy: trackByFn"
+                class="paginator-number p-1"
+                [class.active]="page === pagination.index"
+                (click)="navigateToPage(page)"
+        >
+            {{ page }}
+        </li>
+        <li style="min-width: fit-content" (click)="navigateToPage(index + 1)">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+          </svg>
+          </li>
+        <li style="min-width: fit-content" (click)="navigateToPage(maxPages)">آخرین صفحه</li>
+    </ol>
+</div>
+
 <p class="m-3" *ngIf="totalCount==0 " style="color: darkred">چیزی پیدا نشد!</p>

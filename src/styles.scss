@@ -8,6 +8,7 @@
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 
+
 $purple: #615EFC;
 $purpleslow:#7E8EF1;
 $wormy:#D1D8C5;
@@ -29,7 +30,28 @@ border-radius: 20px;       /* roundness of the scroll thumb */
 // border: 3px solid orange;  /* creates padding around scroll thumb */
 }
 
+.toast-success {
+  background-color: #28a745 !important;
+}
 
+.toast-error {
+  background-color: #dc3545 !important;
+}
+
+.toast-info {
+  position: absolute;
+  bottom: 30px;
+  top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 99999;
+  background-color: #1658e7 !important;
+  color: #000000;
+}
+
+.toast-warning {
+  background-color: #ffc107 !important;
+}
   
   
 
