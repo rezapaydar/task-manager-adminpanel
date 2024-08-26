@@ -30,8 +30,6 @@ registerSwiperElements();
     ExportExcellService,
     DashboardAuthGuard,
     LoginAuthGuard,
-    provideAnimations(), // required animations providers
-    provideToastr()
   ]
 })
 export class PagesModule { }

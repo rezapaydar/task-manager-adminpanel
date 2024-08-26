@@ -6,6 +6,7 @@ import { TimeService } from '../../../../shared/services/time.service';
 import { MapService } from '../../../../shared/components/map/map.service';
 import { ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Flowbite } from '../../../../shared/flowbite.decorator';
 
 
 @Component({
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.scss'
 })
+@Flowbite()
 export class AddTaskComponent {
 
   constructor(private toastService: ToastrService,public modalService: ModalService,private map:MapService,private exportExcellService:ExportExcellService,public timeService: TimeService,private cd: ChangeDetectorRef, private ngZone: NgZone){

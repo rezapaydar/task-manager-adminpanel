@@ -39,7 +39,10 @@ export class MapComponent {
   }
 
   private getCurrentPosition(): any {
-
+    var container = L.DomUtil.get('map');
+    if (container._leaflet_id) {
+        container._leaflet_id = null;
+    }   
     this.map = map('map',{
       fullscreenControl: true,
       fullscreenControlOptions: {
@@ -92,6 +95,12 @@ export class MapComponent {
   addMarker(e:any){
     // Add marker to map at click location; add popup window
     var newMarker = new L.marker(e.target.latlng).addTo(this.map);
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    // this.map.remove();
   }
 
   
