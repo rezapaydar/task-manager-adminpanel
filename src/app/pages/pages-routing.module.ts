@@ -10,6 +10,7 @@ import { AddNewTechnicinComponent } from './dashboard/techinicin/tecnicin-add/ad
 import { AdminsComponent } from './dashboard/admins/admins.component';
 import { TasksComponent } from './dashboard/tasks/tasks.component';
 import { AddTaskComponent } from './dashboard/tasks/add-task/add-task.component';
+import { TeamsComponent } from './dashboard/teams/teams.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
       {path:'admins/list',component:AdminsComponent,canActivate:[DashboardAuthGuard]},
       {path:'tasks/list',component:TasksComponent,canActivate:[DashboardAuthGuard]},
       {path:'tasks/add',component:AddTaskComponent,canActivate:[DashboardAuthGuard]},
+      {path:'teams/list',component:TeamsComponent,canActivate:[DashboardAuthGuard]},
   ]},
   ];
 

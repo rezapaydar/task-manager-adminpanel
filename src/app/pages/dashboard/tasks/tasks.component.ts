@@ -111,7 +111,6 @@ export class TasksComponent {
   index = 0;
   slidePerView = 1;
 
-  @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
   initialized = false;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -124,6 +123,9 @@ export class TasksComponent {
 
   }
 
+  @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
+  @ViewChild('swipert') swiperReft!: ElementRef<SwiperContainer>;
+
   changeSlide(prevOrNext: number): void {
     
     
@@ -131,6 +133,16 @@ export class TasksComponent {
       this.swiperRef.nativeElement.swiper.slidePrev();
     } else {
       this.swiperRef.nativeElement.swiper.slideNext();
+    }
+  }
+
+  changeSlidet(prevOrNext: number): void {
+    
+    
+    if (prevOrNext === -1) {
+      this.swiperReft.nativeElement.swiper.slidePrev();
+    } else {
+      this.swiperReft.nativeElement.swiper.slideNext();
     }
   }
 
@@ -142,10 +154,6 @@ export class TasksComponent {
     this.modalService.close()
 
   }
-
-
-  
-
 
   //* slice response array
   chunkArray(array: any[], chunkSize: number): any[] {

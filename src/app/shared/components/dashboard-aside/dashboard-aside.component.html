@@ -1,4 +1,5 @@
 <aside
+  style="z-index: 999999;"
   class="fixed flex justify-between flex-col hover:resize-x z-50 top-0 right-0 z-40 w-48 h-full transition-transform translate-x-full bg-white border-l border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
   aria-label="Sidenav"
   id="drawer-navigation"
@@ -171,8 +172,7 @@
             #linktasks="routerLinkActive"
             type="button"
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-sales"
-            data-collapse-toggle="dropdown-sales"
+            
           >
 
           <svg *ngIf="!linktasks.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -11,12 +11,15 @@ import { CommonModule } from '@angular/common';
 import { ModalService } from './modal.service';
 import { Options } from './modal-options';
 import { Observable, fromEvent, zip } from 'rxjs';
+import { initDropdowns } from 'flowbite';
+import { Flowbite } from '../../flowbite.decorator';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
 })
+@Flowbite()
 export class ModalComponent implements AfterViewInit {
   @ViewChild('modal') modal!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
@@ -50,6 +53,7 @@ export class ModalComponent implements AfterViewInit {
     this.options = this.modalService.options;
     this.addOptions();
     this.addEnterAnimations();
+
   }
 
   addEnterAnimations() {

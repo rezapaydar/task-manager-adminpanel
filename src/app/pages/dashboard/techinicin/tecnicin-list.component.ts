@@ -129,16 +129,16 @@ export class tecnicinListComponent {
 
   }
 
-  changeSlide(prevOrNext: number): void {
+  changeSlide(prevOrNext: number,swiper:ElementRef<SwiperContainer>|any): void {
     
     
     if (prevOrNext === -1) {
-      this.swiperRef.nativeElement.swiper.slidePrev();
+      swiper.nativeElement.swiper.slidePrev();
     } else {
-      this.swiperRef.nativeElement.swiper.slideNext();
+      swiper.nativeElement.swiper.slideNext();
     }
   }
-
+  
   exportToExcell(){
     this.exportExcellService.exportToExcel('shoplist')
   }

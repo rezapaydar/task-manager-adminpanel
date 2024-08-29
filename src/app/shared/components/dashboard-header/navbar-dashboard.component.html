@@ -1,4 +1,4 @@
-<nav dir="rtl" class=" border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+<nav style="z-index: 999998;" dir="rtl" class=" border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700  fixed left-0 right-0 top-0 z-50">
     <div class="flex flex-wrap justify-between items-center pr-50">
 
       <div class="flex justify-start items-center lg:pr-64 md:pr-0">
@@ -582,7 +582,7 @@
               </defs>
             </svg>
 
-          <span class="pr-1">{{userinfo.firstName + userinfo.lastName}}</span>
+          <span class="pr-1">{{userinfo.firstName==null ? 'نام کاربر' : userinfo.firstName}}</span>
           <!-- <img
             class="w-8 h-8 rounded-full"
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
@@ -591,6 +591,7 @@
         </button>
         <!-- Dropdown menu -->
         <div
+         
           class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
           id="dropdown"
         >

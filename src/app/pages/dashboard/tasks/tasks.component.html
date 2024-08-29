@@ -174,7 +174,7 @@
                                         
 
 
-                                        <div [id]="swiperContainerId" class="px-2 px-md-5 position-relative">
+                                        <div [id]="swiperContainerId" class="px-2 md:px-5 relative">
                                             <swiper-container  #swiper class="swiper" pagination="true" autoplay="true" >
                                                 <swiper-slide >
                                                 <img src="img/no-image.jpg" class="h-[160px] w-[336px]" alt="">
@@ -200,21 +200,23 @@
                                                 <swiper-slide><img src="img/no-image.jpg" alt="" class="h-[160px] w-[336px]"></swiper-slide>
 
                                             </swiper-container>
-                                            <div class="swiper-button-next-unique">
-                                                <button (click)="changeSlide(1)">
-                                                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                                                    </svg>                                                  
-                                                </button>
-                                              </div>
-                                              <div class="swiper-button-prev-unique">
-                                                <button (click)="changeSlide(-1)">
-                                                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-                                                    </svg>
-                                                    
-                                                </button>
-                                              </div>
+                                            <div class="swiper-navigation absolute w-[90%] flex justify-between top-6 z-50">
+                                                <div class="swiper-button-next-unique">
+                                                    <button (click)="changeSlide(1)">
+                                                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                                                        </svg>                                                  
+                                                    </button>
+                                                  </div>
+                                                <div class="swiper-button-prev-unique">
+                                                    <button (click)="changeSlide(-1)">
+                                                      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+                                                        </svg>
+                                                        
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div> 
                                          <div class="flex flex-col space-y-4 p-4">
                                             <div class="relative my-6">
@@ -227,8 +229,8 @@
                                             </div>
                                             <div class="relative my-6" class="block  pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                                 <label for="small_outlined" class="absolute z-50 text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 -translate-x-1/2  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-4 -translate-x-1/2  peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">ابزار ها</label>
-                                                <div class="slider border border-gray-200  p-2 rounded-lg">
-                                                    <swiper-container slides-per-view="3" space-between="10" #swiper class="swiper" pagination="true" autoplay="true" >
+                                                <div class="slider border border-gray-200  p-2 rounded-lg relative">
+                                                    <swiper-container slides-per-view="3" space-between="10" #swipert class="swiper" pagination="true" autoplay="true" >
                                                         <swiper-slide class="shadow p-[3px] shadow-lg border border-gray-200 rounded-lg shadow" >
                                                             <svg   viewBox="0 0 66 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <rect width="66" height="61" rx="10" fill="#CCCCCC"/>
@@ -282,20 +284,22 @@
                                                             </div>
                                                         </swiper-slide>                                   
                                                     </swiper-container>
-                                                    <div class="swiper-button-next-unique">
-                                                      <button (click)="changeSlide(1)">
-                                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                                                          </svg>                                                  
-                                                      </button>
-                                                    </div>
-                                                    <div class="swiper-button-prev-unique">
-                                                      <button (click)="changeSlide(-1)">
-                                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-                                                          </svg>
-                                                          
-                                                      </button>
+                                                    <div class="swiper-navigation absolute w-[90%] flex justify-between top-10 z-50">
+                                                        <div class="swiper-button-next-unique">
+                                                            <button (click)="changeSlidet(1)">
+                                                              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                                                                </svg>                                                  
+                                                            </button>
+                                                          </div>
+                                                        <div class="swiper-button-prev-unique">
+                                                            <button (click)="changeSlidet(-1)">
+                                                              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+                                                                </svg>
+                                                                
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
