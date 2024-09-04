@@ -165,18 +165,18 @@ export class TasksComponent {
     return result;
   }
 
-    rulerLengthPage: number = 2;
-    totalPages = 1;
-    page:number=1;
-    chunkedPageArray:any;
-    //* offline pagination sale list
-    getNextPageList(page:number){
-      this.page = page;
-      this.data=this.chunkArray(this.chunkedPageArray,10)[page-1].items;
-        if (this.totalPages <= 5) {
-          this.rulerLengthPage = this.totalPages;
-        }
-    }
+  rulerLengthPage: number = 2;
+  totalPages = 1;
+  page:number=1;
+  chunkedPageArray:any;
+  //* offline pagination sale list
+  getNextPageList(page:number){
+    this.page = page;
+    this.data=this.chunkArray(this.chunkedPageArray,10)[page-1].items;
+      if (this.totalPages <= 5) {
+        this.rulerLengthPage = this.totalPages;
+      }
+  }
 
 
 }

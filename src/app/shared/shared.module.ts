@@ -22,7 +22,7 @@ import { LoginApiService } from '../pages/login/api/login-api.service';
 import { AuthServiceService } from './services/auth-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 // import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
@@ -43,7 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClickedOutsideDirective,
   ],
   imports: [
-    
+    ClipboardModule,
     ToastrModule.forRoot(),
     CommonModule,
     FormsModule,
@@ -52,6 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
   ],
   exports:[
+    ClipboardModule,
     ClickedOutsideDirective,
     PaginationComponent,
     StatusreturnPipe,

@@ -1,0 +1,145 @@
+<div class="headercard-info h-72 rounded-lg z-40 w-[90%] bg-white top-[-54px] right-0">
+    <div class="header flex justify-between p-3">
+      <div class="title">
+        <span ><h1>ویرایش اطلاعات</h1></span>
+      </div>
+      <div class="close">
+        <button  routerLink="../">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.82843 6.9999H16V8.9999H3.82843L9.1924 14.3638L7.7782 15.778L0 7.9999L7.7782 0.22168L9.1924 1.63589L3.82843 6.9999Z" fill="#5D5D5D"/>
+            </svg>
+                 
+        </button>
+      </div>
+      
+    </div>
+<!-- 
+top: 50px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 50%;    
+-->
+    <div class="file-picker h-[10rem] w-full flex justify-center items-center">
+      <label class="cursor-pointer relative block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="small_size">
+        <img src="img/teampicdemo.png" class="w-[5rem] h-[5rem]" alt="imageupload">
+        <svg class="absolute top-[50px] border-1 rounded-lg bg-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.3284 5.5L8.32843 7.5H4.5V19.5H20.5V7.5H16.6716L14.6716 5.5H10.3284ZM9.5 3.5H15.5L17.5 5.5H21.5C22.0523 5.5 22.5 5.94772 22.5 6.5V20.5C22.5 21.0523 22.0523 21.5 21.5 21.5H3.5C2.94772 21.5 2.5 21.0523 2.5 20.5V6.5C2.5 5.94772 2.94772 5.5 3.5 5.5H7.5L9.5 3.5ZM12.5 18.5C9.46243 18.5 7 16.0376 7 13C7 9.96243 9.46243 7.5 12.5 7.5C15.5376 7.5 18 9.96243 18 13C18 16.0376 15.5376 18.5 12.5 18.5ZM12.5 16.5C14.433 16.5 16 14.933 16 13C16 11.067 14.433 9.5 12.5 9.5C10.567 9.5 9 11.067 9 13C9 14.933 10.567 16.5 12.5 16.5Z" fill="#5D5D5D"/>
+        </svg>   
+      </label>
+      <input class="hidden w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file">
+    </div>
+    <div class="relative my-6">
+      <input type="text" id="small_outlined" class="block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا نام تیم را وارد کنید" />
+      <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">نام تیم</label>
+    </div>
+    <div class="relative my-6">
+      <input type="text" id="small_outlined" class="block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا توضیحات را وارد کنید" />
+      <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">توضیحات</label>
+    </div>
+    <div class="relative my-6 shadow-3xl border-gray-50 rounded-lg">
+      <button class="block p-6  px-2.5 pb-1.5 pt-3 flex flex-row w-full" (click)="openModalTemplate()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 14V16C8.68629 16 6 18.6863 6 22H4C4 17.5817 7.58172 14 12 14ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11ZM14.5946 18.8115C14.5327 18.5511 14.5 18.2794 14.5 18C14.5 17.7207 14.5327 17.449 14.5945 17.1886L13.6029 16.6161L14.6029 14.884L15.5952 15.4569C15.9883 15.0851 16.4676 14.8034 17 14.6449V13.5H19V14.6449C19.5324 14.8034 20.0116 15.0851 20.4047 15.4569L21.3971 14.8839L22.3972 16.616L21.4055 17.1885C21.4673 17.449 21.5 17.7207 21.5 18C21.5 18.2793 21.4673 18.551 21.4055 18.8114L22.3972 19.3839L21.3972 21.116L20.4048 20.543C20.0117 20.9149 19.5325 21.1966 19.0001 21.355V22.5H17.0001V21.3551C16.4677 21.1967 15.9884 20.915 15.5953 20.5431L14.603 21.1161L13.6029 19.384L14.5946 18.8115ZM18 19.5C18.8284 19.5 19.5 18.8284 19.5 18C19.5 17.1716 18.8284 16.5 18 16.5C17.1716 16.5 16.5 17.1716 16.5 18C16.5 18.8284 17.1716 19.5 18 19.5Z" fill="#5D5D5D"/>
+        </svg>
+          
+        <span class="mr-3 text-gray-500">انتخاب نقش</span>
+      </button>
+    </div>
+    <div class="relative my-6">
+      <button class="block p-6  px-2.5 pb-1.5 pt-3 flex flex-row w-full" cdkCopyToClipboard="{{link}}" (click)="copyAnimation()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.3638 15.5353L16.9496 14.1211L18.3638 12.7069C20.3164 10.7543 20.3164 7.58848 18.3638 5.63586C16.4112 3.68323 13.2453 3.68323 11.2927 5.63586L9.87849 7.05007L8.46428 5.63586L9.87849 4.22164C12.6122 1.48797 17.0443 1.48797 19.778 4.22164C22.5117 6.95531 22.5117 11.3874 19.778 14.1211L18.3638 15.5353ZM15.5353 18.3638L14.1211 19.778C11.3875 22.5116 6.95531 22.5116 4.22164 19.778C1.48797 17.0443 1.48797 12.6121 4.22164 9.8785L5.63585 8.46428L7.05007 9.8785L5.63585 11.2927C3.68323 13.2453 3.68323 16.4111 5.63585 18.3638C7.58847 20.3164 10.7543 20.3164 12.7069 18.3638L14.1211 16.9495L15.5353 18.3638ZM14.8282 7.75718L16.2425 9.17139L9.17139 16.2424L7.75717 14.8282L14.8282 7.75718Z" fill="#5D5D5D"/>
+        </svg>
+          
+          
+        <span class="mr-3 text-gray-500 text-right text-pretty" [innerHTML]="link"></span>
+      </button>
+    </div>
+    <svg width="354" height="2" viewBox="0 0 354 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="354" height="2" fill="#E7E7E7"/>
+    </svg>
+    <div class="relative my-6">
+      <button class="block p-6  px-2.5 pb-1.5 pt-3 flex flex-row w-full" cdkCopyToClipboard="{{link}}" (click)="copyAnimation()">
+        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 4.5H20V6.5H18V19.5C18 20.0523 17.5523 20.5 17 20.5H3C2.44772 20.5 2 20.0523 2 19.5V6.5H0V4.5H5V1.5C5 0.94772 5.44772 0.5 6 0.5H14C14.5523 0.5 15 0.94772 15 1.5V4.5ZM16 6.5H4V18.5H16V6.5ZM7 9.5H9V15.5H7V9.5ZM11 9.5H13V15.5H11V9.5ZM7 2.5V4.5H13V2.5H7Z" fill="#DF5421"/>
+        </svg>
+
+        <span class="mr-3 text-red-500 text-right text-pretty" >حذف تیم</span>
+      </button>
+    </div>
+      
+
+    
+</div>
+
+<ng-template #view>
+                                
+  <div class="modal-header flex justify-between p-3">
+      <div class="modal-title">
+        <span ><h1>انتخاب نقش</h1></span>
+      </div>
+      <div class="close">
+        <button (click)="modalService.close()">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+          </svg>        
+        </button>
+      </div>
+  </div>
+      <div class="flex flex-col space-y-4 p-4">
+        
+        @for(user of users;let i=$index ;track i){
+        <div class="relative my-6 flex">
+          <div class="block p-6  px-2.5 pb-1.5 pt-3 flex flex-row w-full" >
+
+            @if (user.imgUrl==''||user.imgUrl==null) {
+              <svg width="30" height="30" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect x="0.5" y="0.5" width="41" height="41" rx="20.5" fill="url(#pattern0_103_1395)"/>
+                <rect x="0.5" y="0.5" width="41" height="41" rx="20.5" stroke="#B0B0B0"/>
+                <rect width="25" height="9" transform="translate(11 27)" fill="white"/>
+                <defs>
+                <pattern id="pattern0_103_1395" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_103_1395" transform="translate(0 0.174253) scale(0.00398406)"/>
+                </pattern>
+                <image id="image0_103_1395" width="251" height="201" xlink:href="data:image/png;base64,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"/>
+                </defs>
+              </svg>
+            }@else {
+              <img [src]="user.imgUrl" alt="">
+            }
+              
+            <h5 class="mr-3 text-gray-800">{{user.username}}
+              @if(user.rule!=='null'){
+                <span>({{user.rule|changeRule}})</span>
+              }
+            </h5>
+          </div>
+          <button attr.data-dropdown-toggle="dropdownRight{{i}}" data-dropdown-placement="right">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+              <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+            </svg>
+          </button>
+
+          <!-- dropdown menu change rule -->
+          <div id="dropdownRight{{i}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRightButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ادمین</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تکنسین ارشد</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">حذف از تیم</a>
+              </li>
+            </ul>
+          </div>
+          <!-- dropdown menu change rule -->
+
+        </div>
+        }
+
+      </div>
+  
+  
+</ng-template>

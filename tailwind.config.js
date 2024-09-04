@@ -10,6 +10,9 @@ module.exports = {
       'dana':['dana']
     },
     extend: {
+      boxShadow: {
+        '3xl': '0 0 10px 2px rgba(0, 0, 0, 0.1)',
+      },
       keyframes: {
         pulseslow: {
           '0%, 100%': { transform: 'opacity(100%)' },
