@@ -73,8 +73,7 @@
             #linkq="routerLinkActive"
             type="button"
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-pages"
-            data-collapse-toggle="dropdown-pages"
+
           >
 
           <svg *ngIf="!linkq.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,8 +123,6 @@
             #linkadmins="routerLinkActive"
             type="button"
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-sales"
-            data-collapse-toggle="dropdown-sales"
           >
 
           <svg *ngIf="!linkadmins.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -264,11 +261,9 @@
         <li>
           <button
             type="button"
-            routerLink="store/list"
+            routerLink="logs"
             routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linkm="routerLinkActive"
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-authentication"
-            data-collapse-toggle="dropdown-authentication"
           >
 
 
@@ -322,8 +317,6 @@
     type="button"
     (click)="exitPanel()"
     class="flex items-center p-2 w-full text-base font-medium text-red-500 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-    aria-controls="dropdown-authentication"
-    data-collapse-toggle="dropdown-authentication"
   >
 
 

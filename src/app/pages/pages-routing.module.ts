@@ -15,6 +15,7 @@ import { EditTeamComponent } from '../shared/components/teams/components/edit-te
 import { TeamsPanelComponent } from '../shared/components/teams/components/teams-panel/teams-panel.component';
 import { StoreComponent } from './dashboard/store/store.component';
 import { ShowAllToolsComponent } from './dashboard/store/show-all-tools/show-all-tools.component';
+import { LogsComponent } from './dashboard/logs/logs.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
@@ -32,6 +33,7 @@ const routes: Routes = [
       ]},
       {path:'store/panel',component:StoreComponent,canActivate:[DashboardAuthGuard]},
       {path:'store/panel/show-all',component:ShowAllToolsComponent,canActivate:[DashboardAuthGuard]},
+      {path:'logs',component:LogsComponent,canActivate:[DashboardAuthGuard]},
 
   ]},
   ];
