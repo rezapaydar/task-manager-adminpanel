@@ -1,0 +1,234 @@
+<div class=" flex items-center justify-center w-[95vw]   rounded-lg mt-24 h-[90vh]" dir="rtl">
+
+    <!-- store tools  -->
+    <div class="flex flex-col bg-white pr-[125px] w-[100%] h-full my-1 rounded-lg border border-gray-200">
+        <!-- search form start -->
+        <form action="#" method="GET" class=" md:block relative right-2 top-2 md:pr-2 w-full mb-3" >
+            <label for="topbar-search" class="sr-only">جستجو</label>
+            <div class="relative md:w-96">
+              <div class="flex absolute inset-y-0 left-0 items-center pr-3 ml-3 pointer-events-none">
+                <svg
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                name="email"
+                id="topbar-search"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:praceholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                praceholder="جستجو"
+              />
+            </div>
+        </form>
+        <!-- search form end -->
+        
+        <!-- filter tool increase-->
+        <div class="w-full flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+
+            <div class=" flex flex-col flex-shrink-0 space-y-3 md:flex-row-reverse md:items-center lg:justify-end md:space-y-0 md:space-x-3">
+
+
+
+
+
+                <!-- <button (click)="exportToExcell()" type="button" class="flex items-center justify-center flex-shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    خروجی اکسل
+                    <svg class="w-6 h-6 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-2m-8 1V4m0 12-4-4m4 4 4-4"/>
+                    </svg>                                  
+                </button> -->
+                
+            </div>
+        </div>
+        <!-- filter tool increase-->
+
+
+        <!-- tools section  start -->
+            <section class="w-full flex flex-row px-4 py-3 space-y-3 lg:flex-col lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+                
+                <div class="header-line w-full flex flex-row justify-between mb-4 px-4">
+                    <h4 id="titleSection" class="flex items-center justify-center py-2 text-sm font-medium text-gray-600 rounded-lg bg-white-800 ">
+                        {{this.catname}}
+                    </h4>
+    
+                    
+                        <button  type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg bg-white-800 border border-gray-600 hover:border-gray-800 hover:text-gray-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.5 18V21H19.5V18H17.5V16H23.5V18H21.5ZM5.5 18V21H3.5V18H1.5V16H7.5V18H5.5ZM11.5 6V3H13.5V6H15.5V8H9.5V6H11.5ZM11.5 10H13.5V21H11.5V10ZM3.5 14V3H5.5V14H3.5ZM19.5 14V3H21.5V14H19.5Z" fill="#2F4858"/>
+                            </svg>
+                                
+                            فیلتر
+                        </button>
+                    
+                </div>
+                <div class="slide w-full mt-4">
+                    
+                    <div class="container grid grid-cols-6 gap-4">
+                        @for (item of storeTools; track $index) {
+                            <div class="headercard-info relative rounded-lg w-full">
+                                @if(item.imgUrl==''||item.imgUrl==null){
+                                    <img class="rounded-t-lg absolute z-[-1] w-full h-[8rem]" src="img/no-image.jpg" alt="" />
+                                }@else {
+                                <img class="rounded-t-lg absolute z-[-1] w-full h-[96px]" src="{{item.imgUrl}}" alt="" />
+
+                                }
+                                <div class="flex flex-col z-[2]">
+                                    <div class="font-semibold text-xl py-4 flex justify-between items-center p-4" style="background: linear-gradient(#aaaaaa,transparent);">
+                                        <button class="edit-team-info" >
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.75 3.5H15.5V5H14V14.75C14 15.1642 13.6642 15.5 13.25 15.5H2.75C2.33579 15.5 2 15.1642 2 14.75V5H0.5V3.5H4.25V1.25C4.25 0.83579 4.58579 0.5 5 0.5H11C11.4142 0.5 11.75 0.83579 11.75 1.25V3.5ZM12.5 5H3.5V14H12.5V5ZM5.75 7.25H7.25V11.75H5.75V7.25ZM8.75 7.25H10.25V11.75H8.75V7.25ZM5.75 2V3.5H10.25V2H5.75Z" fill="#DF5421"/>
+                                            </svg>   
+                                        </button>
+                                        <button class="edit-team-info" (click)="openModalTemplate(item)">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33364L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6473L14.435 2.21232C14.8256 1.8218 15.4587 1.8218 15.8492 2.21232L18.6777 5.04075C19.0682 5.43127 19.0682 6.06444 18.6777 6.45496L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z" fill="#2F4858"/>
+                                        </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="body-card flex flex-col  mt-14 p-1">
+                                        <p>شماره اموال : {{item.propertyNum}}</p>
+                                        <p>نام ابزار : {{item.toolName}}</p>
+                                        @if (item.isExistinStore) {
+                                            <span class="text-blue-600 text-sm flex flex-row justify-center mt-4">
+                                                <svg class="pl-1" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="8.2" cy="8.13623" r="7" stroke="#0059FC" stroke-width="2"/>
+                                                    <circle cx="8.2" cy="8.13623" r="4" fill="#0059FC"/>
+                                                </svg>
+                                                    
+                                                موجود در انبار
+                                            </span>
+                                        }@else{
+                                            <span class="text-red-600 text-sm flex flex-row justify-center mt-4">
+                                                <svg class="pl-1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="8" cy="8" r="7" stroke="#DF5421" stroke-width="2"/>
+                                                    <circle cx="8" cy="8" r="4" fill="#DF5421"/>
+                                                </svg>
+                                                ناموجود در انبار
+                                            </span>
+                                        }
+                                </div>
+
+                            </div>
+
+                        }
+                    </div>    
+
+                    <!-- start pagination -->
+                    <app-pagination 
+                    (page)="getNextPageList($event)"
+                    [index]="page"
+                    [totalCount]="totalPages"
+                    [maxPages]="totalPages"
+                    [rulerLength]="rulerLengthPage"
+                    ></app-pagination>
+                    <!-- end pagination -->
+                    
+                </div>
+
+
+            </section>
+        <!-- tools section  end -->
+    </div>
+    <!-- store tools  -->
+</div>
+
+
+    <!--********************************** modal start **************************************-->
+
+
+    <ng-template #viewLT>
+        
+        <form [formGroup]="editToolForm" class="w-auto h-auto" dir="rtl">
+        <div class="modal-header flex justify-between p-3" >
+            <div class="modal-title">
+            <span ><h1>ویرایش ابزار</h1></span>
+            </div>
+            <div class="close">
+            <button (click)="modalService.close()">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                </svg>        
+            </button>
+            </div>
+        </div>
+        
+            
+            <div class="headercard-info relative rounded-lg w-full" dir="rtl">
+                @if(itemActive.imgUrl==''||itemActive.imgUrl==null){
+                <img class="rounded-t-lg z-[-1] w-full h-[8rem]" src="img/no-image.jpg" alt="" />
+                }@else {
+                <img class="rounded-t-lg z-[-1] w-full h-[8rem]" src="{{itemActive.imgUrl}}" alt="" />
+
+                }
+                <div class="flex flex-col z-2 absolute top-0 w-full">
+                    <div class="font-semibold text-xl py-4 flex justify-between items-center p-4" style="background: linear-gradient(#aaaaaa,transparent);">
+                        <button class="edit-team-info" >
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.75 3.5H15.5V5H14V14.75C14 15.1642 13.6642 15.5 13.25 15.5H2.75C2.33579 15.5 2 15.1642 2 14.75V5H0.5V3.5H4.25V1.25C4.25 0.83579 4.58579 0.5 5 0.5H11C11.4142 0.5 11.75 0.83579 11.75 1.25V3.5ZM12.5 5H3.5V14H12.5V5ZM5.75 7.25H7.25V11.75H5.75V7.25ZM8.75 7.25H10.25V11.75H8.75V7.25ZM5.75 2V3.5H10.25V2H5.75Z" fill="#DF5421"/>
+                            </svg>   
+                        </button>
+                        <button class="edit-team-info">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33364L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6473L14.435 2.21232C14.8256 1.8218 15.4587 1.8218 15.8492 2.21232L18.6777 5.04075C19.0682 5.43127 19.0682 6.06444 18.6777 6.45496L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z" fill="#2F4858"/>
+                        </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="flex flex-col space-y-4 p-4 bg-white">
+                <div class="relative my-6">
+                    <input formControlName="propertyNum" type="text" id="small_outlined" class="placeholder-gray-300 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا شماره اموال را وارد کنید" />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">شماره اموال</label>
+                </div>
+                <div class="relative my-6">
+                    <input formControlName="toolName" type="tel" id="small_outlined" class="placeholder-gray-300 text-right placeholder:rtl:left-0 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا نام ابزار را وارد کنید" />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">نام ابزار</label>
+                </div>
+                <div class="relative my-6">
+                    <input formControlName="category" aria-controls="dropdownteammembers" data-collapse-toggle="dropdownteammembers" type="text" id="small_outlined" class=" placeholder-gray-300 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="دسته بندی ابزار را کنید" />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform translate-x-6  scale-75 -top-3 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-[-5px] peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">دسته بندی ابزار</label>
+                    <label for="small_outlined " class="absolute top-3 left-3" aria-controls="dropdownteammembers" data-collapse-toggle="dropdownteammembers">
+                        <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.4999 5.6714L11.4497 0.72168L12.8639 2.13589L6.4999 8.4999L0.135986 2.13589L1.5502 0.72168L6.4999 5.6714Z" fill="#B0B0B0"/>
+                        </svg>
+                    </label>
+                    <div id="dropdownteammembers" class="hidden z-10 w-100 bg-white transform -translate-y-1 divide-y rounded-b-lg dark:bg-gray-700 dark:divide-gray-600 border-[1px] border-t-0 ">
+                        <ul class=" p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
+                        <li *ngFor="let n of categoryTools">
+                            <div class="flex flex-row-reverse justify-between items-baseline p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <input id="default-radio-4" type="radio" [value]="n" (click)="changeCatVal(n)" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                <div class="flex flex-row">
+                                
+                                <label for="default-radio-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{{n}}</label>
+                                </div>
+                                
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <button  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">ثبت</button>
+            </div>
+     
+        </form>
+        
+    </ng-template>
+
+
+
+
+    <!--********************************** modal end ******************************************-->

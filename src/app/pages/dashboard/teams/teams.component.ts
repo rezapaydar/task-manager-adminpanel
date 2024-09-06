@@ -40,7 +40,6 @@ export class TeamsComponent {
     
     addTeamWithModal(e?:any) {
 
-      // alert('hi')
   
       this.modalService.open(this.vcr,this.view,{
         animations: {
@@ -54,6 +53,7 @@ export class TeamsComponent {
         },
         size: {
           width: '24rem',
+          height:'auto'
         },
       })
       

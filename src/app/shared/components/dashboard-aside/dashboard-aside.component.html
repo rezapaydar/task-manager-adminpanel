@@ -238,11 +238,10 @@
         <li>
           <button
             type="button"
-            routerLink="store/list"
+            routerLink="store/panel"
             routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linkt="routerLinkActive"
             class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-authentication"
-            data-collapse-toggle="dropdown-authentication"
+
           >
 
           <svg *ngIf="!linkt.isActive" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,29 +257,7 @@
             <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">انبار</span>
 
           </button>
-          <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >افزودن محصول</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >افزودن کاتالوگ محصول</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 pr-11 w-full text-base font-regular text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >لیست کامل محصولات</a
-              >
-            </li>
-          </ul>
+          
         </li>
 
               <!-- logs li sub menu -->

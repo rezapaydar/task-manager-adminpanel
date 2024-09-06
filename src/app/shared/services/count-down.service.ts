@@ -30,7 +30,7 @@ export class CountDownService {
   title = 'dashboard-test';
   show = true;
   offOn = false;
-  submitButtonText = "دریافت کد"
+  submitButtonText = "ورود"
   subTextIfYouDontSubmit=`عضو نشده اید؟
   <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">شروع رایگان برای 10 روز</a>`;
   phoneNumber='';
@@ -133,7 +133,7 @@ export class CountDownService {
         confirmButtonText: 'متوجه شدم'
       })
 
-      this.submitButtonText = `دریافت کد`;
+      this.submitButtonText = `ورود`;
 
     }
 

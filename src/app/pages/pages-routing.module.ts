@@ -11,9 +11,10 @@ import { AdminsComponent } from './dashboard/admins/admins.component';
 import { TasksComponent } from './dashboard/tasks/tasks.component';
 import { AddTaskComponent } from './dashboard/tasks/add-task/add-task.component';
 import { TeamsComponent } from './dashboard/teams/teams.component';
-import { AddTeamComponent } from '../shared/components/teams/components/add-team/add-team.component';
 import { EditTeamComponent } from '../shared/components/teams/components/edit-team/edit-team.component';
 import { TeamsPanelComponent } from '../shared/components/teams/components/teams-panel/teams-panel.component';
+import { StoreComponent } from './dashboard/store/store.component';
+import { ShowAllToolsComponent } from './dashboard/store/show-all-tools/show-all-tools.component';
 
 const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
@@ -25,11 +26,13 @@ const routes: Routes = [
       {path:'admins/list',component:AdminsComponent,canActivate:[DashboardAuthGuard]},
       {path:'tasks/list',component:TasksComponent,canActivate:[DashboardAuthGuard]},
       {path:'tasks/add',component:AddTaskComponent,canActivate:[DashboardAuthGuard]},
-      {path:'teams/list',component:TeamsComponent,children:[
+      {path:'teams/list',component:TeamsComponent,canActivate:[DashboardAuthGuard],children:[
         {path:'',component:TeamsPanelComponent,canActivate:[DashboardAuthGuard]},
-        {path:'add',component:AddTeamComponent,canActivate:[DashboardAuthGuard]},
         {path:'edit',component:EditTeamComponent,canActivate:[DashboardAuthGuard]},
       ]},
+      {path:'store/panel',component:StoreComponent,canActivate:[DashboardAuthGuard]},
+      {path:'store/panel/show-all',component:ShowAllToolsComponent,canActivate:[DashboardAuthGuard]},
+
   ]},
   ];
 
