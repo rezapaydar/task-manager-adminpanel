@@ -1,0 +1,47 @@
+.mainDiv {
+  width: 900px;
+  height: 500px;
+}
+
+.lottie-style {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.p1 {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: IRANSansXFaNum-Medium, sans-serif;
+  color: #404040;
+}
+
+.p2 {
+  font-size: 36px;
+  font-weight: 900;
+  font-family: IRANSansXFaNum-Medium, sans-serif;
+  color: #404040;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mainDiv {
+    width: 98%;
+    height: 90vh;
+  }
+  .p1 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: IRANSansXFaNum-Medium, sans-serif;
+    color: #404040;
+  }
+
+  .p2 {
+    font-size: 25px;
+    font-weight: 900;
+    font-family: IRANSansXFaNum-Medium, sans-serif;
+    color: #404040;
+    text-align: center;
+  }
+}

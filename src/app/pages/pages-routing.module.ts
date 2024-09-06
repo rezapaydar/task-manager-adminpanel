@@ -21,6 +21,7 @@ const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[DashboardAuthGuard],children:[
+
       {path:'overview',component:ChartsOverviewComponent,canActivate:[DashboardAuthGuard]},
       {path:'tecnicin/list',component:tecnicinListComponent,canActivate:[DashboardAuthGuard]},
       {path:'tecnicin/new',component:AddNewTechnicinComponent,canActivate:[DashboardAuthGuard]},
@@ -34,8 +35,8 @@ const routes: Routes = [
       {path:'store/panel',component:StoreComponent,canActivate:[DashboardAuthGuard]},
       {path:'store/panel/show-all',component:ShowAllToolsComponent,canActivate:[DashboardAuthGuard]},
       {path:'logs',component:LogsComponent,canActivate:[DashboardAuthGuard]},
-
   ]},
+  
   ];
 
 @NgModule({
