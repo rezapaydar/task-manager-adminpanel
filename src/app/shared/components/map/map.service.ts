@@ -6,6 +6,7 @@ import { ModalService } from '../modal/modal.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MapService {
   private markerSubject = new Subject<{ lat: number, lng: number }>();
   marker$ = this.markerSubject.asObservable();

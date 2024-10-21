@@ -25,6 +25,12 @@ export class LoginComponent implements OnInit {
   constructor(private authservice:AuthServiceService,private loginapi:LoginApiService,public countDown:CountDownService,private elementRef: ElementRef<HTMLElement>,private renderer: Renderer2,private router: Router){}
   ngOnInit(): void {
     // this.isAuthenticated = localStorage.getItem('isAuthenticated');
+    Swal.fire({
+      title: 'خوش آمدید!',
+      text: 'این یگ پنل ادمین دمو است که در حال توسعه است',
+      icon: 'success',
+      confirmButtonText: 'متوجه شدم'
+    })
     this.authservice.removeToken()
     if (this.authservice.getToken()) {
      this.router.navigate(['/dashboard'])
@@ -40,23 +46,24 @@ export class LoginComponent implements OnInit {
 
   sendForm(){
     // console.log(this.loginapi.login(this.loginData));
-    if (this.username.valid||this.password.valid) {
-      this.loginapi.login(this.loginData).subscribe(
-        (res:responseLogin)=>{
-          this.authservice.saveToken(res.token);
-          this.authservice.saveUserInfo(res);
-          this.router.navigate(['/dashboard'])
+    this.router.navigate(['/dashboard'])
+    // if (this.username.valid||this.password.valid) {
+    //   this.loginapi.login(this.loginData).subscribe(
+    //     (res:responseLogin)=>{
+    //       this.authservice.saveToken(res.token);
+    //       this.authservice.saveUserInfo(res);
+    //       this.router.navigate(['/dashboard'])
   
-        },
-        (err:Error)=>{
+    //     },
+    //     (err:Error)=>{
           
-          console.error(err);
-          return false;
-        }
-      );
-    } else {
+    //       console.error(err);
+    //       return false;
+    //     }
+    //   );
+    // } else {
       
-    }    
+    // }    
 
   }
 
