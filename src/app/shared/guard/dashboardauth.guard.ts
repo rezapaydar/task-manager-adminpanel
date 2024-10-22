@@ -17,21 +17,21 @@ export class DashboardAuthGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | Promise<boolean> {
         // this.globalvar.loginprops = localStorage.getItem('username');        
-        this.isAuthenticated = localStorage.getItem('isAuthenticated');
-        if (this.isAuthenticated=='' || this.isAuthenticated==null || this.isAuthenticated==undefined) {
-            this.router.navigate(['login']);
+        // this.isAuthenticated = localStorage.getItem('isAuthenticated');
+        // if (this.isAuthenticated=='' || this.isAuthenticated==null || this.isAuthenticated==undefined) {
+        //     this.router.navigate(['login']);
             // this.gotoPath = 'login';
             
             // this.yOrN = false;
-            return false;
-        }
-        else{
+        //     return false;
+        // }
+        // else{
             // this.router.navigate(['dashboard']);
             // this.router.navigate(['profile']);
             // this.yOrN = true;
             return true;
 
-        }
+        // }
         // return this.yOrN;
 
     }

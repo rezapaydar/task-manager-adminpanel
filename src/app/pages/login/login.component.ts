@@ -46,6 +46,8 @@ export class LoginComponent implements OnInit {
 
   sendForm(){
     // console.log(this.loginapi.login(this.loginData));
+    console.log('dashboard');
+    
     this.router.navigate(['/dashboard'])
     // if (this.username.valid||this.password.valid) {
     //   this.loginapi.login(this.loginData).subscribe(

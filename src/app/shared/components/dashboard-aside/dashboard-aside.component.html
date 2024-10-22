@@ -13,7 +13,7 @@
           class="mr-3 h-8"
           alt="Flowbite Logo"
         /> -->
-        <span class="self-center pr-2 text-2xl font-semibold whitespace-nowrap dark:text-white">logo</span>
+        <span class="self-center pr-2 text-2xl font-semibold whitespace-nowrap dark:text-white active:text-white">logo</span>
       </a>
       <form action="#" method="GET" class="md:hidden mb-2">
         <label for="sidebar-search" class="sr-only">جستجو</label>
@@ -48,7 +48,7 @@
               <!-- dashboard li sub menu -->
         <li>
                         
-          <a routerLink="overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linka="routerLinkActive"  class=" flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+          <a routerLink="overview" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  #linka="routerLinkActive"  class=" flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 active:text-white dark:hover:bg-gray-500 group">
               
             <svg *ngIf="!linka.isActive" width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
               <path d="M14 21C13.4477 21 13 20.5523 13 20V12C13 11.4477 13.4477 11 14 11H20C20.5523 11 21 11.4477 21 12V20C21 20.5523 20.5523 21 20 21H14ZM4 13C3.44772 13 3 12.5523 3 12V4C3 3.44772 3.44772 3 4 3H10C10.5523 3 11 3.44772 11 4V12C11 12.5523 10.5523 13 10 13H4ZM9 11V5H5V11H9ZM4 21C3.44772 21 3 20.5523 3 20V16C3 15.4477 3.44772 15 4 15H10C10.5523 15 11 15.4477 11 16V20C11 20.5523 10.5523 21 10 21H4ZM5 19H9V17H5V19ZM15 19H19V13H15V19ZM13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V8C21 8.55228 20.5523 9 20 9H14C13.4477 9 13 8.55228 13 8V4ZM15 5V7H19V5H15Z" fill="#5D5D5D"/>
@@ -59,7 +59,7 @@
             </svg>
               
 
-            <span class="ml-3 text-right pr-3 dark:text-gray-100 text-gray-300" [ngClass]="{'text-gray-950':'if(linka.isActive)'}">داشبورد</span>
+            <span class="ml-3 text-right pr-3 dark:text-gray-300 text-gray-300" [ngClass]="{'text-gray-950':'if(linka.isActive)'}">داشبورد</span>
           </a>
 
         </li>
@@ -85,7 +85,7 @@
           </svg>
             
 
-            <span class="flex-1 ml-3 pr-3 text-right text-gray-500 dark:text-gray-100 whitespace-nowrap" [ngClass]="{'text-gray-950':'if(linkq.isActive)'}">تکنسین ها</span>
+            <span class="flex-1 ml-3 pr-3 text-right text-gray-500 dark:text-gray-300 dark:active:text-gray-100 whitespace-nowrap" >تکنسین ها</span>
 
           </button>
           
@@ -137,7 +137,7 @@
             
           
 
-            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">ادمین ها</span>
+            <span class="flex-1 ml-3 pr-3 text-right dark:text-white-300 whitespace-nowrap">ادمین ها</span>
 
           </button>
           <ul id="dropdown-sales" class="hidden py-2 space-y-2">
@@ -182,7 +182,7 @@
             
           
 
-            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">تسک ها</span>
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap dark:text-white-300">تسک ها</span>
 
           </button>
           <ul id="dropdown-sales" class="hidden py-2 space-y-2">
@@ -219,7 +219,7 @@
             
             
           
-            <span class="flex-1 ml-3 pr-3 whitespace-nowrap">تیم ها</span>
+            <span class="flex-1 ml-3 pr-3 whitespace-nowrap dark:text-white-300">تیم ها</span>
 
             <!-- badge for team -->
             <!-- <span
@@ -251,7 +251,7 @@
             
             
 
-            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">انبار</span>
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap dark:text-white-300">انبار</span>
 
           </button>
           
@@ -278,7 +278,7 @@
               
             
 
-            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">لاگ ها</span>
+            <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap dark:text-white-300">لاگ ها</span>
 
           </button>
           <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
@@ -332,7 +332,7 @@
       
     
 
-    <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap">خروج</span>
+    <span class="flex-1 ml-3 pr-3 text-right whitespace-nowrap dark:text-white-300">خروج</span>
 
   </button>
   </div>

@@ -1,7 +1,7 @@
 <div class=" flex items-center justify-center w-[95vw]   rounded-lg mt-24 h-[90vh]" dir="rtl">
 
     <!-- store tools  -->
-    <div class="flex flex-col bg-white pr-[125px] w-[100%] h-full my-1 rounded-lg border border-gray-200">
+    <div class="flex flex-col bg-white dark:bg-gray-900 pr-[125px] w-[100%] h-full my-1 rounded-lg border border-gray-200">
         <!-- search form start -->
         <form action="#" method="GET" class=" md:block relative right-2 top-2 md:pr-2 w-full mb-3" >
             <label for="topbar-search" class="sr-only">جستجو</label>
@@ -40,7 +40,7 @@
 
 
 
-                <!-- <button (click)="exportToExcell()" type="button" class="flex items-center justify-center flex-shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <!-- <button (click)="exportToExcell()" type="button" class="flex items-center justify-center flex-shrink-0 px-3 py-2 text-sm font-medium text-gray-900 bg-white dark:bg-gray-900 border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                     خروجی اکسل
                     <svg class="w-6 h-6 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15v2a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-2m-8 1V4m0 12-4-4m4 4 4-4"/>
@@ -56,12 +56,12 @@
             <section class="w-full flex flex-row px-4 py-3 space-y-3 lg:flex-col lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
                 
                 <div class="header-line w-full flex flex-row justify-between mb-4 px-4">
-                    <h4 id="titleSection" class="flex items-center justify-center py-2 text-sm font-medium text-gray-600 rounded-lg bg-white-800 ">
+                    <h4 id="titleSection" class="flex items-center justify-center py-2 text-sm font-medium text-gray-600 rounded-lg bg-white dark:bg-gray-900-800 ">
                         {{this.catname}}
                     </h4>
     
                     
-                        <button  type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg bg-white-800 border border-gray-600 hover:border-gray-800 hover:text-gray-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+                        <button  type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-600 rounded-lg bg-white dark:bg-gray-900-800 border border-gray-600 hover:border-gray-800 hover:text-gray-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21.5 18V21H19.5V18H17.5V16H23.5V18H21.5ZM5.5 18V21H3.5V18H1.5V16H7.5V18H5.5ZM11.5 6V3H13.5V6H15.5V8H9.5V6H11.5ZM11.5 10H13.5V21H11.5V10ZM3.5 14V3H5.5V14H3.5ZM19.5 14V3H21.5V14H19.5Z" fill="#2F4858"/>
                             </svg>
@@ -187,24 +187,24 @@
             </div>
             
 
-            <div class="flex flex-col space-y-4 p-4 bg-white">
+            <div class="flex flex-col space-y-4 p-4 bg-white dark:bg-gray-900">
                 <div class="relative my-6">
                     <input formControlName="propertyNum" type="text" id="small_outlined" class="placeholder-gray-300 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا شماره اموال را وارد کنید" />
-                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">شماره اموال</label>
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">شماره اموال</label>
                 </div>
                 <div class="relative my-6">
                     <input formControlName="toolName" type="tel" id="small_outlined" class="placeholder-gray-300 text-right placeholder:rtl:left-0 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="لطفا نام ابزار را وارد کنید" />
-                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">نام ابزار</label>
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 translate-x-6  scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">نام ابزار</label>
                 </div>
                 <div class="relative my-6">
                     <input formControlName="category" aria-controls="dropdownteammembers" data-collapse-toggle="dropdownteammembers" type="text" id="small_outlined" class=" placeholder-gray-300 block p-6  px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="دسته بندی ابزار را کنید" />
-                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform translate-x-6  scale-75 -top-3 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-[-5px] peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">دسته بندی ابزار</label>
+                    <label for="small_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform translate-x-6  scale-75 -top-3 z-10 origin-[0] bg-white dark:bg-gray-900 dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:top-[-5px] peer-placeholder-shown:-translate-x-2   peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-3 rtl:peer-focus:left-auto">دسته بندی ابزار</label>
                     <label for="small_outlined " class="absolute top-3 left-3" aria-controls="dropdownteammembers" data-collapse-toggle="dropdownteammembers">
                         <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.4999 5.6714L11.4497 0.72168L12.8639 2.13589L6.4999 8.4999L0.135986 2.13589L1.5502 0.72168L6.4999 5.6714Z" fill="#B0B0B0"/>
                         </svg>
                     </label>
-                    <div id="dropdownteammembers" class="hidden z-10 w-100 bg-white transform -translate-y-1 divide-y rounded-b-lg dark:bg-gray-700 dark:divide-gray-600 border-[1px] border-t-0 ">
+                    <div id="dropdownteammembers" class="hidden z-10 w-100 bg-white dark:bg-gray-900 transform -translate-y-1 divide-y rounded-b-lg dark:bg-gray-700 dark:divide-gray-600 border-[1px] border-t-0 ">
                         <ul class=" p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
                         <li *ngFor="let n of categoryTools">
                             <div class="flex flex-row-reverse justify-between items-baseline p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">

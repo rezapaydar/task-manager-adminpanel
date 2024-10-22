@@ -6,6 +6,7 @@ $dark-theme: true;
     color: black;
     transition: 0.3s;
 }
+
 .active span{
     padding-right: 20px;
     transition: padding-right 0.3s;
@@ -19,7 +20,12 @@ $dark-theme: true;
         border: 1px solid rgb(118, 118, 118);
         border-radius: 10px;
         color: rgb(238, 238, 238);
-  
+    }
+
+    .active span{
+        padding-right: 20px;
+        transition: padding-right 0.3s;
+        color: rgb(132, 132, 132);
     }
   
-  }
+}

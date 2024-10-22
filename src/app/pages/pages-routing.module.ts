@@ -20,21 +20,21 @@ import { LogsComponent } from './dashboard/logs/logs.component';
 const routes: Routes = [
   {path:"",redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,canActivate:[DashboardAuthGuard],children:[
+  {path:'dashboard',component:DashboardComponent,children:[
 
-      {path:'overview',component:ChartsOverviewComponent,canActivate:[DashboardAuthGuard]},
-      {path:'tecnicin/list',component:tecnicinListComponent,canActivate:[DashboardAuthGuard]},
-      {path:'tecnicin/new',component:AddNewTechnicinComponent,canActivate:[DashboardAuthGuard]},
-      {path:'admins/list',component:AdminsComponent,canActivate:[DashboardAuthGuard]},
-      {path:'tasks/list',component:TasksComponent,canActivate:[DashboardAuthGuard]},
-      {path:'tasks/add',component:AddTaskComponent,canActivate:[DashboardAuthGuard]},
-      {path:'teams/list',component:TeamsComponent,canActivate:[DashboardAuthGuard],children:[
-        {path:'',component:TeamsPanelComponent,canActivate:[DashboardAuthGuard]},
-        {path:'edit',component:EditTeamComponent,canActivate:[DashboardAuthGuard]},
+      {path:'overview',component:ChartsOverviewComponent},
+      {path:'tecnicin/list',component:tecnicinListComponent},
+      {path:'tecnicin/new',component:AddNewTechnicinComponent},
+      {path:'admins/list',component:AdminsComponent},
+      {path:'tasks/list',component:TasksComponent},
+      {path:'tasks/add',component:AddTaskComponent},
+      {path:'teams/list',component:TeamsComponent,children:[
+        {path:'',component:TeamsPanelComponent},
+        {path:'edit',component:EditTeamComponent},
       ]},
-      {path:'store/panel',component:StoreComponent,canActivate:[DashboardAuthGuard]},
-      {path:'store/panel/show-all',component:ShowAllToolsComponent,canActivate:[DashboardAuthGuard]},
-      {path:'logs',component:LogsComponent,canActivate:[DashboardAuthGuard]},
+      {path:'store/panel',component:StoreComponent},
+      {path:'store/panel/show-all',component:ShowAllToolsComponent},
+      {path:'logs',component:LogsComponent},
   ]},
   
   ];
