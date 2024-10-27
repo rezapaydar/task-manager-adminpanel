@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
     // this.isAuthenticated = localStorage.getItem('isAuthenticated');
     Swal.fire({
       title: 'خوش آمدید!',
-      text: 'این یگ پنل ادمین دمو است که در حال توسعه است',
+      text: `این یک پنل ادمین دمو است که در حال توسعه است
+      لطفا وی پی ان خود را روشن کنید `,
       icon: 'success',
       confirmButtonText: 'متوجه شدم'
     })
